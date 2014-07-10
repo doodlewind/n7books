@@ -59,7 +59,16 @@ class AppController extends Controller {
 	}
 
     public function beforeFilter() {
+		
         $this->Auth->allow('index', 'view', 'category');
+		$this->Auth->authError ='<div class="alert alert-info fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert">
+				<span aria-hidden="true">×</span>
+				<span class="sr-only">Close</span>
+			</button>
+			抱歉，你还没登入哦 :-D
+			</div>';
+		
     }
 	
 }
