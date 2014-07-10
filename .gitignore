@@ -1,15 +1,25 @@
 
 app/Config/database.php
+
 app/Console
+
 app/fonts
+
 app/Lib/*
+
 app/Locale
+
 app/Cache
+
 app/Test
+
 app/tmp/cache/models/*
+
+app/tmp/*
+
 app/tmp/cache/persistent/*
 app/tmp/logs/*
-
+app/tmp/cache/models/myapp_cake_model_default_ustc_old_book_list
 
 lib/*
 vendors
