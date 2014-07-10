@@ -1,2 +1,11 @@
 
 app/Config/database.php
+app/Console
+app/fonts
+app/Lib
+app/Locale
+app/Cache
+app/Test
+app/tmp
+lib
+vendors
