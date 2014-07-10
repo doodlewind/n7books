@@ -31,7 +31,7 @@
 					<span class=" glyphicon glyphicon-chevron-down"></span>
 				</button> 
 				<a class="navbar-brand" href="/books">
-					<span class="glyphicon glyphicon-book"></span> 南七书摊
+					<small><span class="glyphicon glyphicon-book"></span> 南七书摊</small>
 				</a>
 				<a href="/books/add" class="visible-xs navbar-brand" role="button">
 					<span class="glyphicon glyphicon-plus"></span>

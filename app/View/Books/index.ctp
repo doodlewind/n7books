@@ -12,7 +12,7 @@ for ($i = 0; $i < $sum; $i++) {
 					if ($books[$i]['Book']['cover']) {
 						echo '<img src="'.$books[$i]['Book']['cover'].'">';
 					}else
-						echo '<img data-src="holder.js/100x150//text:'.$books[$i]['Book']['title'].'">';
+						echo '<img data-src="holder.js/60x80//text:'.$books[$i]['Book']['title'].'">';
 					?>
 				</div>
 			</div>
