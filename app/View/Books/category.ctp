@@ -1,4 +1,3 @@
-<!-- File: /app/View/bookss/index.ctp -->
 <?php
 $sum = count($books);
 for ($i = 0; $i < $sum; $i++) {
@@ -6,11 +5,14 @@ for ($i = 0; $i < $sum; $i++) {
 		echo '<div class="col-xs-12 col-md-12">';
 	}
 	?>
-		<div class="col-xs-12 col-md-3">
+		<div class="col-xs-12 col-sm-3 col-md-3">
 			<div class="col-xs-5 col-md-12">
 				<div class="thumbnail">
 					<?php
-					echo '<img data-src="holder.js/100x150//text:'.$books[$i]['Book']['title'].'">';
+					if ($books[$i]['Book']['cover']) {
+						echo '<img src="'.$books[$i]['Book']['cover'].'">';
+					}else
+						echo '<img data-src="holder.js/100x150//text:'.$books[$i]['Book']['title'].'">';
 					?>
 				</div>
 			</div>
@@ -32,7 +34,6 @@ for ($i = 0; $i < $sum; $i++) {
 		echo '<div class="col-xs-12"><hr></div>
 		</div>';
 	}
-	//else echo '</div>';
 }
 echo '</div>';
 

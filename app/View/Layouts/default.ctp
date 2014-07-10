@@ -3,10 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
 	<title>
 		<?php 
-		//$title_for_layout = "南七书摊";
 		echo '书摊'.$title_for_layout; ?>
 	</title>
 
@@ -15,7 +14,6 @@
 			body {
 			  padding-top: 70px;
 			}
-
 	</style><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -24,55 +22,50 @@
 		<![endif]-->
 </head>
 <body>
-	
 	</div><!-- Fixed navbar -->
 	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
-			<div class="navbar-header">
-				
-				
+			<div class="navbar-header">			
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
 					<span class=" glyphicon glyphicon-chevron-down"></span>
-
 				</button> 
-				
-				<a class="navbar-brand" href="/i/books"><span class="glyphicon glyphicon-book"></span> 南七书摊</a>
-				
-				<a href="/i/books/add" class="visible-xs navbar-brand" role="button"><span class="glyphicon glyphicon-plus"></span></a>
-				<a href="/i/users" class="visible-xs navbar-brand" role="button"><span class="glyphicon glyphicon-user"></span></a>
+				<a class="navbar-brand" href="/books">
+					<span class="glyphicon glyphicon-book"></span> 南七书摊
+				</a>
+				<a href="/books/add" class="visible-xs navbar-brand" role="button">
+					<span class="glyphicon glyphicon-plus"></span>
+				</a>
+				<a href="/users" class="visible-xs navbar-brand" role="button">
+					<span class="glyphicon glyphicon-user"></span>
+				</a>
 				<li class="visible-xs navbar-brand dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list"></span><span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<li>
-							<a href="/i/books/category/数理">数理</a>
+							<a href="/books/category/数理">数理</a>
 						</li>
 						<li>
-							<a href="/i/books/category/生化">生化</a>
+							<a href="/books/category/生化">生化</a>
 						</li>
 						<li>
-							<a href="/i/books/category/信息">信息</a>
+							<a href="/books/category/信息">信息</a>
 						</li>
 						<li>
-							<a href="/i/books/category/工程">工程</a>
+							<a href="/books/category/工程">工程</a>
 						</li>
 						<li>
-							<a href="/i/books/category/外语">外语</a>
+							<a href="/books/category/外语">外语</a>
 						</li>
 						<li>
-							<a href="/i/books/category/社科">社科</a>
+							<a href="/books/category/社科">社科</a>
 						</li>
 						<li>
-							<a href="/i/books/category/其它">其它</a>
+							<a href="/books/category/其它">其它</a>
 						</li>
 					</ul>
-				</li>
-				
-
-				
-				
+				</li>				
 			</div>
-			
 			<div class="navbar-collapse collapse">
 				<form class="navbar-form navbar-left" role="search">
 					<div>
@@ -87,45 +80,42 @@
 					</div><!-- /.row -->	
 				</form>
 				<form class="navbar-form navbar-right" role="upload">
-					<a href="/i/books/add" class="hidden-xs btn btn-primary" role="button"><span class="glyphicon glyphicon-plus">传书</span></a>
+					<a href="/books/add" class="hidden-xs btn btn-primary" role="button"><span class="glyphicon glyphicon-plus">传书</span></a>
 				</form>
 				<ul class="nav navbar-nav navbar-right hidden-xs">
 					<li class="dropdown hidden-xs">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list"></span> 分类 <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li>
-								<a href="/i/books/category/数理">数理</a>
+								<a href="/books/category/数理">数理</a>
 							</li>
 							<li>
-								<a href="/i/books/category/生化">生化</a>
+								<a href="/books/category/生化">生化</a>
 							</li>
 							<li>
-								<a href="/i/books/category/信息">信息</a>
+								<a href="/books/category/信息">信息</a>
 							</li>
 							<li>
-								<a href="/i/books/category/工程">工程</a>
+								<a href="/books/category/工程">工程</a>
 							</li>
 							<li>
-								<a href="/i/books/category/外语">外语</a>
+								<a href="/books/category/外语">外语</a>
 							</li>
 							<li>
-								<a href="/i/books/category/社科">社科</a>
+								<a href="/books/category/社科">社科</a>
 							</li>
 							<li>
-								<a href="/i/books/category/其它">其它</a>
+								<a href="/books/category/其它">其它</a>
 							</li>
 						</ul>
 					</li>
 					<li >
-						<a href="/i/users/"><span class="glyphicon glyphicon-user"></span> 我的</a>
+						<a href="/users/"><span class="glyphicon glyphicon-user"></span> 我的</a>
 					</li>
 				</ul>
-				
 			</div><!--/.nav-collapse -->
 		</div>
 	</div>
-	
-	
 	<div id="container">
 		<div id="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
@@ -133,7 +123,6 @@
 						'element' => 'failure'
 						));
 				?>
-				<?php //echo $this->Session->flash(); ?>
 				<?php echo $this->fetch('content'); ?>
 				<?php //echo $this->element('sql_dump'); ?>
 			</div>
@@ -141,46 +130,38 @@
 				<span class="hidden-xs">
 				<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
 					<li>
-						<a href="/i/books">全部</a>
+						<a href="/books">全部</a>
 					</li>
 					<li>
-						<a href="/i/books/category/数理">数理</a>
+						<a href="/books/category/数理">数理</a>
 					</li>
 					<li>
-						<a href="/i/books/category/生化">生化</a>
+						<a href="/books/category/生化">生化</a>
 					</li>
 					<li>
-						<a href="/i/books/category/信息">信息</a>
+						<a href="/books/category/信息">信息</a>
 					</li>
 					<li>
-						<a href="/i/books/category/工程">工程</a>
+						<a href="/books/category/工程">工程</a>
 					</li>
 					<li>
-						<a href="/i/books/category/外语">外语</a>
+						<a href="/books/category/外语">外语</a>
 					</li>
 					<li>
-						<a href="/i/books/category/社科">社科</a>
+						<a href="/books/category/社科">社科</a>
 					</li>
 					<li>
-						<a href="/i/books/category/其它">其它</a>
+						<a href="/books/category/其它">其它</a>
 					</li>
 				</ul>
 			</span>
 			</div>
-			
-			<?//php echo $this->element('default');
-	?>
-			
 		</div>
 </div>
 	<?php 
-	
-	
 		echo $this->Html->script('/js/jquery-2.0.3.min');
 		echo $this->Html->script('/js/holder');
-		//echo $this->Html->script('/js/test');
 		echo $this->Html->script('/js/bootstrap.min');
-		
 		?>
 
 </body>

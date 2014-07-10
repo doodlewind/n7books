@@ -28,7 +28,8 @@ class BooksController extends AppController {
 			        'Book.id',
 							'Book.title',
 							'Book.author',
-							'comment',
+							'Book.comment',
+							'Book.cover',
 			        'MIN(Book.price) AS min',
 						  'COUNT(Book.title) AS count'
 		    ),

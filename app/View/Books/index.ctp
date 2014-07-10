@@ -1,6 +1,3 @@
-<!-- File: /app/View/bookss/index.ctp -->
-
-
 <?php
 $sum = count($books);
 for ($i = 0; $i < $sum; $i++) {
@@ -12,7 +9,6 @@ for ($i = 0; $i < $sum; $i++) {
 			<div class="col-xs-5 col-sm-12 col-md-12">
 				<div class="thumbnail">
 					<?php
-					//echo $douban.pattern($books[$i]['Book']['title'], $books[$i]['Book']['author']);
 					if ($books[$i]['Book']['cover']) {
 						echo '<img src="'.$books[$i]['Book']['cover'].'">';
 					}else

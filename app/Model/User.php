@@ -9,7 +9,6 @@ class User extends AppModel {
 	            'className' => 'Book',
 							'foreignKey' => 'user_id',
 							'order' => 'Book.created DESC',
-	            'limit' => '5',
 	            'dependent' => true
 	        )
 	    );
@@ -18,13 +17,13 @@ class User extends AppModel {
          'email' => array(
              'required' => array(
                  'rule'    => array('email', true),
-                 'message' => 'A username is required'
+                 'message' => '亲爱的学霸，用户名是必填的...'
              )
          ),
          'password' => array(
              'required' => array(
                  'rule' => array('notEmpty'),
-                 'message' => 'A password is required'
+                 'message' => '亲爱的学霸，密码是必填的...'
              )
          ),
      );

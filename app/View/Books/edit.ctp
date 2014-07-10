@@ -134,7 +134,7 @@
 									 ));
 	 ?>
 		<br>
-			<a href="/i/users" role="button" class="btn btn-success">返回</a>
+			<a href="/users" role="button" class="btn btn-success">返回</a>
 			<input class="btn btn-primary" type="submit" value="保存"></form>
 			<?php echo $this->Form->postLink(
                   '删除',

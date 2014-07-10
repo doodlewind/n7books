@@ -8,7 +8,6 @@
 			<div class="col-xs-6 col-md-5 "><br>
 				<div class="thumbnail">
 					<?php
-					//echo $douban.pattern($books[$i]['Book']['title'], $books[$i]['Book']['author']);
 					if ($item['Book']['cover']) {
 						echo '<img src="'.$item['Book']['cover'].'">';
 					}else
