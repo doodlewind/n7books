@@ -6,7 +6,7 @@ app/Lib
 app/Locale
 app/Cache
 app/Test
-app/tmp/
+app/tmp/*
 
 lib
 vendors
