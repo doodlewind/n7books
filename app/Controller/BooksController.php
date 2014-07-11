@@ -2,8 +2,56 @@
 
 class BooksController extends AppController {
 	public $helpers = array('Html', 'Form');
+	public $components = array('Paginator');
+	
+	public $paginate = array(
+		'Book' => array(
+	        'limit' => 8,
+	        'order' => array(
+	            'Book.modified' => 'desc'
+		),
+		'fields' => array(
+	        'Book.id',
+			'Book.title',
+			'Book.author',
+			'Book.comment',
+			'Book.cover',
+	        'MIN(Book.price) AS min',
+			'COUNT(Book.title) AS count'
+		),
+		'conditions' => array(
+	        'Book.on_shelf' => '在售'
+		),
+		'group' => 'Book.title'
+	));
 
 	public function index() {
+		$paginate = array(
+				'Book' => array(
+			        'limit' => 8,
+			        'order' => array(
+			            'Book.modified' => 'desc'
+				),
+				'fields' => array(
+			        'Book.id',
+					'Book.title',
+					'Book.author',
+					'Book.comment',
+					'Book.cover',
+			        'MIN(Book.price) AS min',
+					'COUNT(Book.title) AS count'
+				),
+				'conditions' => array(
+			        'Book.on_shelf' => '在售'
+				),
+				'group' => 'Book.title'
+			));
+		
+		
+		$this->Paginator->settings = $paginate;
+		$data = $this->Paginator->paginate('Book');
+		$this->set('books', $data);
+		/*
 		$this->set('books', $this->Book->find('all',array(
 				'fields' => array(
 				        'Book.id',
@@ -16,38 +64,86 @@ class BooksController extends AppController {
 			    ),
 				'group' => 'Book.title'
 			)));
+		*/
 	}
 	
 	public function category($category = null) {
 		if (!$category){
-			throw new NotFoundException(__('抱歉，你要的东西书摊还没有..'));
+	        $this->Session->setFlash(
+	            __('你要的，小书摊给不了 :-('));
+			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
 		}
-    	$books = $this->Book->find('all',array(
-			'conditions' => array('Book.category' => $category),
-			'fields' => array(
+		$paginate = array(
+				'Book' => array(
+			        'limit' => 8,
+			        'order' => array(
+			            'Book.modified' => 'desc'
+				),
+				'fields' => array(
 			        'Book.id',
-							'Book.title',
-							'Book.author',
-							'Book.comment',
-							'Book.cover',
+					'Book.title',
+					'Book.author',
+					'Book.comment',
+					'Book.cover',
 			        'MIN(Book.price) AS min',
-						  'COUNT(Book.title) AS count'
-		    ),
-			'group' => 'Book.title'
-		));
-		if (!$books) {
-			throw new NotFoundException(__('抱歉，你要的东西书摊还没有..'));
+					'COUNT(Book.title) AS count'
+				),
+				'conditions' => array(
+			        'Book.on_shelf' => '在售',
+					'Book.category' => $category
+				),
+				'group' => 'Book.title',
+		));	
+		$this->Paginator->settings = $paginate;
+		$data = $this->Paginator->paginate('Book');
+		$this->set('books', $data);
+	}
+	
+	public function find() {
+		$title = $this->request->data['Book']['title'];
+		if ($title==null){
+	        $this->Session->setFlash(
+	            __('你要的，小书摊给不了 :-('));
+			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
 		}
-		$this->set('books',$books);	
+		$paginate = array(
+				'Book' => array(
+			        'limit' => 10,
+			        'order' => array(
+			            'Book.modified' => 'desc'
+				),
+				'fields' => array(
+			        'Book.id',
+					'Book.title',
+					'Book.author',
+					'Book.comment',
+					'Book.cover',
+			        'MIN(Book.price) AS min',
+					'COUNT(Book.title) AS count'
+				),
+				'conditions' => array(
+					'Book.title LIKE' => '%'.$title.'%',
+			        'Book.on_shelf' => '在售'
+				),
+				'group' => 'Book.title',
+		));
+		$this->Paginator->settings = $paginate;
+		$data = $this->Paginator->paginate('Book');
+		$this->set('title', $title);
+		$this->set('books', $data);
 	}
 	
 	public function view($title = null) {
 		if (!$title){
-			throw new NotFoundException(__('抱歉，你要的东西书摊还没有..'));
+	        $this->Session->setFlash(
+	            __('你要的，小书摊给不了 :-('));
+			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
 		}
 		$book = $this->Book->findAllByTitle($title);
 		if (!$book) {
-			throw new NotFoundException(__('抱歉，你要的东西书摊还没有..'));
+	        $this->Session->setFlash(
+	            __('你要的，小书摊给不了 :-('));
+			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
 		}
 		$this->set('books',$book);
 	}

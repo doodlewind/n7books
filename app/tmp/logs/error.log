@@ -58375,3 +58375,380 @@ Request URL: /index.html
 Stack Trace:
 #0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-07-11 05:08:56 Error: [MissingControllerException] Controller class StartController could not be found.
+Exception Attributes: array (
+  'class' => 'StartController',
+  'plugin' => NULL,
+)
+Request URL: /start
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 09:28:06 Error: [MissingControllerException] Controller class Mx3.mail2000.com.tw:25Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Mx3.mail2000.com.tw:25Controller',
+  'plugin' => NULL,
+)
+Request URL: /mx3.mail2000.com.tw:25
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 12:57:23 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 12:59:53 Error: Fatal Error (4): parse error, expecting `','' or `';'' in [/Library/WebServer/Documents/i/app/View/Books/all.ctp, line 5]
+2014-07-11 12:59:53 Error: [FatalErrorException] parse error, expecting `','' or `';''
+Request URL: /books/all/page:11
+Stack Trace:
+#0 /Library/WebServer/Documents/i/lib/Cake/Error/ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'parse error, ex...', '/Library/WebSer...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#2 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-07-11 13:00:01 Error: Fatal Error (4): parse error, expecting `','' or `';'' in [/Library/WebServer/Documents/i/app/View/Books/all.ctp, line 5]
+2014-07-11 13:00:01 Error: [FatalErrorException] parse error, expecting `','' or `';''
+Request URL: /books/all/page:11
+Stack Trace:
+#0 /Library/WebServer/Documents/i/lib/Cake/Error/ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'parse error, ex...', '/Library/WebSer...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#2 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-07-11 13:00:02 Error: Fatal Error (4): parse error, expecting `','' or `';'' in [/Library/WebServer/Documents/i/app/View/Books/all.ctp, line 5]
+2014-07-11 13:00:02 Error: [FatalErrorException] parse error, expecting `','' or `';''
+Request URL: /books/all/page:11
+Stack Trace:
+#0 /Library/WebServer/Documents/i/lib/Cake/Error/ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'parse error, ex...', '/Library/WebSer...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#2 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-07-11 13:00:13 Error: Fatal Error (4): parse error, expecting `','' or `';'' in [/Library/WebServer/Documents/i/app/View/Books/all.ctp, line 5]
+2014-07-11 13:00:13 Error: [FatalErrorException] parse error, expecting `','' or `';''
+Request URL: /books/all/page:11
+Stack Trace:
+#0 /Library/WebServer/Documents/i/lib/Cake/Error/ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'parse error, ex...', '/Library/WebSer...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#2 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-07-11 13:00:35 Error: Fatal Error (4): parse error, expecting `','' or `';'' in [/Library/WebServer/Documents/i/app/View/Books/all.ctp, line 5]
+2014-07-11 13:00:35 Error: [FatalErrorException] parse error, expecting `','' or `';''
+Request URL: /books/all/page:11
+Stack Trace:
+#0 /Library/WebServer/Documents/i/lib/Cake/Error/ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'parse error, ex...', '/Library/WebSer...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#2 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-07-11 13:00:58 Error: Fatal Error (4): parse error, expecting `','' or `';'' in [/Library/WebServer/Documents/i/app/View/Books/all.ctp, line 5]
+2014-07-11 13:00:58 Error: [FatalErrorException] parse error, expecting `','' or `';''
+Request URL: /books/all/page:11
+Stack Trace:
+#0 /Library/WebServer/Documents/i/lib/Cake/Error/ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'parse error, ex...', '/Library/WebSer...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#2 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-07-11 13:01:18 Error: Fatal Error (4): parse error, expecting `','' or `';'' in [/Library/WebServer/Documents/i/app/View/Books/all.ctp, line 5]
+2014-07-11 13:01:18 Error: [FatalErrorException] parse error, expecting `','' or `';''
+Request URL: /books/all/page:11
+Stack Trace:
+#0 /Library/WebServer/Documents/i/lib/Cake/Error/ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'parse error, ex...', '/Library/WebSer...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#2 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-07-11 13:01:19 Error: Fatal Error (4): parse error, expecting `','' or `';'' in [/Library/WebServer/Documents/i/app/View/Books/all.ctp, line 5]
+2014-07-11 13:01:19 Error: [FatalErrorException] parse error, expecting `','' or `';''
+Request URL: /books/all/page:11
+Stack Trace:
+#0 /Library/WebServer/Documents/i/lib/Cake/Error/ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'parse error, ex...', '/Library/WebSer...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#2 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'parse error, ex...', '/Library/WebSer...', 5, Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-07-11 13:04:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:05:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:07:02 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:07:19 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:07:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:07:34 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:07:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:07:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:07:37 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:07:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:07:39 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:07:43 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:07:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:07:47 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:07:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:11:16 Error: [MissingModelException] Book2
+Request URL: /books/all
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/Controller/BooksController.php(24): PaginatorComponent->paginate('Book2')
+#1 [internal function]: BooksController->all()
+#2 /Library/WebServer/Documents/i/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(BooksController), Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(BooksController), Object(CakeRequest))
+#5 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2014-07-11 13:12:01 Error: [MissingModelException] Book1
+Request URL: /books/all
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/Controller/BooksController.php(24): PaginatorComponent->paginate('Book1')
+#1 [internal function]: BooksController->all()
+#2 /Library/WebServer/Documents/i/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(BooksController), Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(BooksController), Object(CakeRequest))
+#5 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2014-07-11 13:12:02 Error: [MissingModelException] Book1
+Request URL: /books/all
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/Controller/BooksController.php(24): PaginatorComponent->paginate('Book1')
+#1 [internal function]: BooksController->all()
+#2 /Library/WebServer/Documents/i/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(BooksController), Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(BooksController), Object(CakeRequest))
+#5 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2014-07-11 13:12:04 Error: [MissingModelException] Book1
+Request URL: /books/all
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/Controller/BooksController.php(24): PaginatorComponent->paginate('Book1')
+#1 [internal function]: BooksController->all()
+#2 /Library/WebServer/Documents/i/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(BooksController), Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(BooksController), Object(CakeRequest))
+#5 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2014-07-11 13:12:04 Error: [MissingModelException] Book1
+Request URL: /books/all
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/Controller/BooksController.php(24): PaginatorComponent->paginate('Book1')
+#1 [internal function]: BooksController->all()
+#2 /Library/WebServer/Documents/i/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(BooksController), Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(BooksController), Object(CakeRequest))
+#5 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2014-07-11 13:12:06 Error: [MissingModelException] Book1
+Request URL: /books/all
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/Controller/BooksController.php(24): PaginatorComponent->paginate('Book1')
+#1 [internal function]: BooksController->all()
+#2 /Library/WebServer/Documents/i/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(BooksController), Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(BooksController), Object(CakeRequest))
+#5 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2014-07-11 13:12:48 Error: [MissingModelException] Books
+Request URL: /books/all
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/Controller/BooksController.php(24): PaginatorComponent->paginate('Books')
+#1 [internal function]: BooksController->all()
+#2 /Library/WebServer/Documents/i/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(BooksController), Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(BooksController), Object(CakeRequest))
+#5 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2014-07-11 13:27:31 Error: [NotFoundException] Not Found
+Request URL: /books/index/page:3
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/Controller/BooksController.php(38): PaginatorComponent->paginate('Book')
+#1 [internal function]: BooksController->index()
+#2 /Library/WebServer/Documents/i/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(BooksController), Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(BooksController), Object(CakeRequest))
+#5 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2014-07-11 13:30:38 Error: Fatal Error (4): parse error, expecting `')'' in [/Library/WebServer/Documents/i/app/Controller/BooksController.php, line 101]
+2014-07-11 13:30:38 Error: [FatalErrorException] parse error, expecting `')''
+Request URL: /books/category/%E6%95%B0%E7%90%86
+Stack Trace:
+#0 /Library/WebServer/Documents/i/lib/Cake/Error/ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'parse error, ex...', '/Library/WebSer...', 101)
+#1 [internal function]: ErrorHandler::handleError(4, 'parse error, ex...', '/Library/WebSer...', 101, Array)
+#2 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'parse error, ex...', '/Library/WebSer...', 101, Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-07-11 13:31:16 Error: [MissingControllerException] Controller class Mx3.mail2000.com.tw:25Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Mx3.mail2000.com.tw:25Controller',
+  'plugin' => NULL,
+)
+Request URL: /mx3.mail2000.com.tw:25
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:45:57 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-07-11 13:47:30 Error: Fatal Error (4): parse error in [/Library/WebServer/Documents/i/app/View/Layouts/default.ctp, line 79]
+2014-07-11 13:47:30 Error: [FatalErrorException] parse error
+Request URL: /books?_method=POST&data%5BBook%5D%5Btitle%5D=%E5%BE%AE%E7%A7%AF%E5%88%86%E5%AD%A6%E5%AF%BC%E8%AE%BA%E4%B8%8A%E5%86%8C
+Stack Trace:
+#0 /Library/WebServer/Documents/i/lib/Cake/Error/ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'parse error', '/Library/WebSer...', 79)
+#1 [internal function]: ErrorHandler::handleError(4, 'parse error', '/Library/WebSer...', 79, Array)
+#2 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'parse error', '/Library/WebSer...', 79, Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-07-11 13:47:41 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'conditions' in 'where clause'
+Request URL: /books/find
+Stack Trace:
+#0 /Library/WebServer/Documents/i/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Library/WebServer/Documents/i/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Book`.`...', Array)
+#2 /Library/WebServer/Documents/i/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT `Book`.`...', Array, Array)
+#3 /Library/WebServer/Documents/i/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Book`.`...', false)
+#4 /Library/WebServer/Documents/i/lib/Cake/Model/Model.php(2905): DboSource->read(Object(Book), Array)
+#5 /Library/WebServer/Documents/i/lib/Cake/Model/Model.php(2877): Model->_readDataSource('all', Array)
+#6 /Library/WebServer/Documents/i/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Library/WebServer/Documents/i/app/Controller/BooksController.php(125): PaginatorComponent->paginate('Book')
+#8 [internal function]: BooksController->find()
+#9 /Library/WebServer/Documents/i/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(BooksController), Array)
+#10 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 /Library/WebServer/Documents/i/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(BooksController), Object(CakeRequest))
+#12 /Library/WebServer/Documents/i/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}

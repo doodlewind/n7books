@@ -67,14 +67,18 @@
 				</li>				
 			</div>
 			<div class="navbar-collapse collapse">
-				<form class="navbar-form navbar-left" role="search">
+				<?php
+				echo $this->Form->create('Book',
+				array('controller' => 'books', 'action' => 'find', 'class' => 'navbar-form navbar-left', 'role' => 'search'));
+				?>
 					<div>
 					  <div>
 					    <div class="input-group">
-					      <input type="text" class="form-control"placeholder="..">
-					      <span class="input-group-btn">
-					        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-					      </span>
+						      <input  name="data[Book][title]" id="BookTitle" type="text" class="form-control"placeholder="..">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+						      </span>
+						    </form>
 					    </div><!-- /input-group -->
 					  </div><!-- /.col-lg-6 -->
 					</div><!-- /.row -->	
