@@ -14,6 +14,23 @@
 			body {
 			  padding-top: 70px;
 			}
+			.jumbotron {
+				background: url(/img/white_paperboard.png) repeat 0 0;
+		    -moz-box-shadow: 0 5px 3px rgba(32, 32, 32, .08);
+		    -webkit-box-shadow: 0 5px 3px rgba(32, 32, 32, .08);
+		    box-shadow: 0 5px 5px rgba(32, 32, 32, .28);
+			}
+			.thumbnail {
+				filter:alpha(opacity=80);
+				opacity:0.80;
+				border: 0;
+			}
+			img {
+			    -moz-box-shadow: 0 3px 3px rgba(32, 32, 32, .08);
+			    -webkit-box-shadow: 0 3px 3px rgba(32, 32, 32, .08);
+			    box-shadow: 0 3px 3px rgba(32, 32, 32, .28);
+			}
+			
 	</style><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -22,7 +39,6 @@
 		<![endif]-->
 </head>
 <body>
-	</div><!-- Fixed navbar -->
 	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">			
@@ -74,7 +90,7 @@
 					<div>
 					  <div>
 					    <div class="input-group">
-						      <input  name="data[Book][title]" id="BookTitle" type="text" class="form-control"placeholder="..">
+						      <input  name="data[Book][title]" id="BookTitle" type="text" class="form-control"placeholder="">
 						      <span class="input-group-btn">
 						        <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
 						      </span>
@@ -122,7 +138,7 @@
 	</div>
 	<div id="container">
 		<div id="row">
-			<div class="col-md-9 col-sm-12 col-xs-12">
+			<div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2">
 				<?php echo $this->Session->flash('flash', array(
 						'element' => 'failure'
 						));
@@ -130,41 +146,23 @@
 				<?php echo $this->fetch('content'); ?>
 				<?php //echo $this->element('sql_dump'); ?>
 			</div>
-			<div class="col-md-3  hidden-sm hidden-xs">
-				<span class="hidden-xs">
-				<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-					<li>
-						<a href="/books">全部</a>
-					</li>
-					<li>
-						<a href="/books/category/数理">数理</a>
-					</li>
-					<li>
-						<a href="/books/category/生化">生化</a>
-					</li>
-					<li>
-						<a href="/books/category/信息">信息</a>
-					</li>
-					<li>
-						<a href="/books/category/工程">工程</a>
-					</li>
-					<li>
-						<a href="/books/category/外语">外语</a>
-					</li>
-					<li>
-						<a href="/books/category/社科">社科</a>
-					</li>
-					<li>
-						<a href="/books/category/其它">其它</a>
-					</li>
-				</ul>
-			</span>
-			</div>
+			
 		</div>
-</div>
+	</div>
+	<div id="footer">
+      <div class="container col-xs-12">
+        <br><br><br><p class="text-center">
+			<small>2014 南七书摊 - ackn. <a href="https://freeshell.ustc.edu.cn">Freeshell</a> 
+				| <a href="http://glyphicons.com">glyphicons</a>
+				| <a href="http://cakephp.org">cakePHP</a></small>
+		</p>
+      </div>
+    </div>
+
 	<?php 
 		echo $this->Html->script('/js/jquery-2.0.3.min');
 		echo $this->Html->script('/js/holder');
+		echo $this->Html->script('/js/mod');
 		echo $this->Html->script('/js/bootstrap.min');
 		?>
 

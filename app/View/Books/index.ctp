@@ -36,7 +36,7 @@ for ($i = 0; $i < $sum; $i++) {
 	}
 	//else echo '</div>';
 }
-echo '<div class="col-xs-8 col-xs-offset-2"><ul class="pagination">';
+echo '<div class="col-xs-8 ">&nbsp;&nbsp;&nbsp;&nbsp;<ul class="pagination">';
 echo $this->Paginator->numbers(array(
 	'first' => '<<',
 	'last' => '>>',

@@ -40,14 +40,13 @@ class AppController extends Controller {
 										'fields' => array('username' => 'email', 'password' => 'password')
 								)
 							),
-							
 	            'loginRedirect' => array(
 	                'controller' => 'books',
 	                'action' => 'index'
 	            ),
 	            'logoutRedirect' => array(
-	                'controller' => 'books',
-	                'action' => 'index'
+	                'controller' => 'users',
+	                'action' => 'welcome'
 	            ),
 					'authorize' => array('Controller') // Added this line
 	        )
@@ -60,7 +59,7 @@ class AppController extends Controller {
 
     public function beforeFilter() {
 		
-        $this->Auth->allow('','index', 'view', 'category');
+        $this->Auth->allow('welcome','find' ,'index', 'view', 'category');
 		$this->Auth->authError ='<div class="alert alert-info fade in" role="alert">
 			<button type="button" class="close" data-dismiss="alert">
 				<span aria-hidden="true">×</span>

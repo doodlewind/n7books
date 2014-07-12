@@ -1,23 +1,12 @@
 <?php echo $this->Form->create('User'); ?>
 <div class="row">
-
   <div class="col-sm-6 col-sm-offset-3">
 		<h3><a>欢迎光临南七书摊</a><br><small>一分钟的事情</small></h3><hr>
 	</div>
-	
   <div class="col-sm-6 col-sm-offset-3">
-	  
-	  
-	  
-	  
 	<div>
-			<?php echo $this->Form->create('User',
-							array('class' => 'form-horizontal', 'controller' => 'users',  'action' => 'edit')
-						); 
-						
-						?>
-						
-						
+			<?php echo $this->Form->create('User', array('class' => 'form-horizontal', 'controller' => 'users',  'action' => 'edit')); ?>
+								
 				<label for="UserUsername" class="col-xs-3 control-label"><p class="text-right"><span class="glyphicon glyphicon-user"></span> 昵称</p></label>
 				<div class="input required col-xs-7">
 					<input name="data[User][username]" class="form-control" type="text" id="UserUsername"

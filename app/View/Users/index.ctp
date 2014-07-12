@@ -31,12 +31,12 @@
 
 foreach ($user['Book'] as $book) {
 	
-		$edit_button_class  = 'btn btn-default btn-sm ';
-		$edit_button_text  = '<span class="glyphicon glyphicon-pencil"></span>';
+		$edit_button_class  = 'btn btn-default btn-xs ';
+		$edit_button_text  = ' 编辑';
 		$edit_button_action = array('controller' => 'books', 'action' => 'edit', $book['id']);
 		
-		$state_button_class  = 'btn btn-success btn-sm ';
-		$state_button_text  = '<span class="glyphicon glyphicon-ok"></span>';
+		$state_button_class  = 'btn btn-success btn-xs ';
+		$state_button_text  = '成交';
 		$state_button_action = array('controller' => 'books', 'action' => 'deal', $book['id']);
 		
 		if ($book['on_shelf']=='成交') {

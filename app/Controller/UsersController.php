@@ -8,6 +8,10 @@ class UsersController extends AppController {
 		$this->Auth->allow('add');
 	}
 
+	public function welcome() {
+		return;
+	}
+	
 	public function login() {
 		$this->set('title_for_layout', '-登陆');
 		if ($this->request->is('post')) {

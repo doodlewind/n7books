@@ -103,7 +103,7 @@ class BooksController extends AppController {
 		$title = $this->request->data['Book']['title'];
 		if ($title==null){
 	        $this->Session->setFlash(
-	            __('你要的，小书摊给不了 :-('));
+	            __('你要的，小书摊没找到 :-('));
 			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
 		}
 		$paginate = array(
@@ -129,7 +129,11 @@ class BooksController extends AppController {
 		));
 		$this->Paginator->settings = $paginate;
 		$data = $this->Paginator->paginate('Book');
-		$this->set('title', $title);
+		if ( $data==null) {
+      $this->Session->setFlash(
+          __('你要的，小书摊没找到 :-('));
+			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
+		}
 		$this->set('books', $data);
 	}
 	
