@@ -3,7 +3,7 @@
 <div class="row">
 
   <div class="col-sm-7 col-sm-offset-2">
-		<h3><a>欢迎光临南七书摊</a><br><small>登入或<b> <a href="/users/add">注册</a> </b>以继续</small></h3><hr>
+		<h3><a>欢迎光临南七书谱</a><br><small>登入或<b> <a href="/users/add">注册</a> </b>以继续</small></h3><hr>
 	</div>
 	
   <div class="col-sm-4 col-sm-offset-2">

@@ -1,6 +1,11 @@
 <?php
 
-class BooksController extends AppController {
+class BooklistsController extends AppController {
+	
+	public function index() {
+		
+	}
+	/*
 	public $helpers = array('Html', 'Form');
 	public $components = array('Paginator');
 	
@@ -65,7 +70,7 @@ class BooksController extends AppController {
 			    ),
 				'group' => 'Book.title'
 			)));
-		*/
+s
 	}
 	
 	public function category($category = null) {
@@ -270,8 +275,7 @@ class BooksController extends AppController {
 	        $bookId = (int) $this->request->params['pass']['id'];
 			if ($this->Book->isOwnedBy($bookId, $user['id'])) return true;
 	    }
-		*/
 	    return parent::isAuthorized($user);
 	}
-
+	*/
 }

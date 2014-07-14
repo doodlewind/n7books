@@ -109,7 +109,18 @@
 	</div>
 </div>
 <div class="row">
-  <div class="col-xs-6 col-md-3 col-xs-offset-6 col-md-offset-7">
+	<div class="col-xs-6 col-md-3 col-xs-offset-3 col-md-offset-3">
+		<br><br>
+   
+	 <div class="checkbox">
+	   <label>
+	     <input name="data[Book][update]" id="BookUpdate" type="checkbox" value="1">更新封面
+	   </label>
+	 </div>
+	 
+	 
+	</div>
+  <div class="col-xs-6 col-md-3 col-xs-offset-1">
 <br><br>
 	 <div class="form-group has-success">
 	     <div class="input-group">

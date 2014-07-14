@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
 	<title>
 		<?php 
-		echo '书摊'.$title_for_layout; ?>
+		echo '书谱'.$title_for_layout; ?>
 	</title>
 
 	<?php echo $this->Html->css('/css/bootstrap.min'); ?>
@@ -47,7 +47,7 @@
 					<span class=" glyphicon glyphicon-chevron-down"></span>
 				</button> 
 				<a class="navbar-brand" href="/books">
-					<small><span class="glyphicon glyphicon-book"></span> 南七书摊</small>
+					<small><span class="glyphicon glyphicon-book"></span> 南七书谱</small>
 				</a>
 				<a href="/books/add" class="visible-xs navbar-brand" role="button">
 					<span class="glyphicon glyphicon-plus"></span>
@@ -142,6 +142,7 @@
 				<?php echo $this->Session->flash('flash', array(
 						'element' => 'failure'
 						));
+
 				?>
 				<?php echo $this->fetch('content'); ?>
 				<?php //echo $this->element('sql_dump'); ?>
@@ -152,7 +153,7 @@
 	<div id="footer">
       <div class="container col-xs-12">
         <br><br><br><p class="text-center">
-			<small>2014 南七书摊 - ackn. <a href="https://freeshell.ustc.edu.cn">Freeshell</a> 
+			<small>2014 南七书谱 - ackn. <a href="https://freeshell.ustc.edu.cn">Freeshell</a> 
 				| <a href="http://glyphicons.com">glyphicons</a>
 				| <a href="http://cakephp.org">cakePHP</a></small>
 		</p>

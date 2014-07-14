@@ -30,7 +30,7 @@ class UsersController extends AppController {
 		//踢出未登录用户
 		$user_id = $this->Auth->user('id');
 		if (!$user_id) {
-			$this->Session->setFlash(__('抱歉，你还没登入哦 :-D'));
+			$this->Session->setFlash(__('学霸，登入后才可以继续哦 :-D '));
 			return $this->redirect(array('action' => 'login'));
 		}
 		//
@@ -57,6 +57,8 @@ class UsersController extends AppController {
 	}
 
 	public function edit($id = null) {
+	//	print_r($this->request->data);
+	//	return;
     	if ($this->User->save($this->request->data)) {
         	$this->Session->setFlash(__('更改已保存'));
         	return $this->redirect(array('action' => 'index'));
@@ -64,6 +66,7 @@ class UsersController extends AppController {
     	$this->Session->setFlash(
         	__('更改无法保存...请重试')
     	);
+			return $this->redirect(array('action' => 'index'));
 
 	}
 	/*

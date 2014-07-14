@@ -5,7 +5,7 @@
 			<?php echo $item['Book']['title'].' - '.$item['Book']['author']; ?>
 		</div>
 		<div class="panel-body">
-			<div class="col-xs-6 col-md-5 "><br>
+			<div class="col-xs-4 col-sm-5"><br>
 				<div class="thumbnail">
 					<?php
 					if ($item['Book']['cover']) {
@@ -15,7 +15,7 @@
 					?>
 				</div>
 			</div>
-			<div class="col-xs-6 col-md-7 ">
+			<div class="col-xs-8 col-sm-7 ">
 				<br>
 				<table class="table table-condensed">
 					<tbody>

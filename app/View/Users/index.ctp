@@ -4,13 +4,13 @@
 		  <div class="panel-body">
 			<ul id="myTab" class="nav nav-tabs" role="tablist">
 			      <li class="active">
-					<a href="#myitem" role="tab" data-toggle="tab">我的书摊</a>
+					<a href="#myitem" role="tab" data-toggle="tab">我的书谱</a>
 				  </li>
 			      <li class="dropdown">
 			        <a href="#setting" role="tab" data-toggle="tab">个人设置</a>
 			      </li>
 			      <li class="dropdown">
-			        <a href="#logout" role="tab" data-toggle="tab">离开书摊</a>
+			        <a href="#logout" role="tab" data-toggle="tab">离开书谱</a>
 			      </li>
 			    </ul>
 				<div id="myTabContent" class="tab-content">
@@ -43,7 +43,7 @@ foreach ($user['Book'] as $book) {
 			
 			$edit_button_class .= 'disabled';
 			
-			$state_button_text  = '<span class="glyphicon glyphicon-repeat"></span>';
+			$state_button_text  = '上架';
 			$state_button_action = array('controller' => 'books', 'action' => 'cancel', $book['id']);
 		}
 		
@@ -123,7 +123,7 @@ foreach ($user['Book'] as $book) {
 														}
 														$select.= '<label class="btn btn-default ';
 														$select.= $tmp1;
-														$select.= '"><input type="radio" name="data[Book][category]" value="';
+														$select.= '"><input type="radio" name="data[User][campus]" value="';
 														$select.= $camp.'"';
 														$select.= $tmp2.'>'.$camp.'</label>';
 													}
@@ -131,32 +131,36 @@ foreach ($user['Book'] as $book) {
 												?>
 												
 											</div>
-										<?php echo $this->Form->end(
-										array('label' => '修改信息',
-											'class' => 'btn btn-primary',
-											'before' => '<br>'
-										) );?>
-										</div>
-										<div class="col-xs-12"><hr></div>	
-										<?php echo $this->Form->create('User',
-												array('controller' => 'users',  'action' => 'edit')
-											);
-											echo $this->Form->input('id', array('type' => 'hidden',
-												'value' => $user['User']['id']
+										<?php 
+											echo $this->Form->end(
+											array('label' => '修改信息',
+												'class' => 'btn btn-primary',
+												'before' => '<br>'
 											));
-										   ?>
+											?>
+										</div>
+										<!--修改密码-->
+										<div class="col-xs-12"><hr></div>	
+										<?php 
+											echo $this->Form->create('User',
+												array('controller' => 'users',
+															'action' => 'edit'
+											));
+										?>
 										<label for="UserPassword" class="col-xs-3 control-label"><p class="text-right"><span class="glyphicon glyphicon-lock"></span></p></label>
 										<div class="input required col-xs-7">
-											<input name="data[User][password]" class="form-control" type="text" id="UserPassword" value="" placeholder="6-16 位英文字母 / 数字"required="required"><br>
+											<input name="data[User][password]" class="form-control" type="password" id="UserPassword" value="" placeholder="6-16 位英文字母 / 数字"required="required"><br>
 										</div><br>
 										
 										<div class="col-xs-12 col-xs-offset-3">
 										<?php 
-												echo $this->Form->end(
-												array('label' => '修改密码', 'class' => 'btn btn-primary') );
-												echo $this->Form->input('id', array('type' => 'hidden',
+												echo $this->Form->input('id', array(
+													'type' => 'hidden',
 													'value' => $user['User']['id'],
 												));
+												echo $this->Form->end(
+												array('label' => '修改密码', 'class' => 'btn btn-primary') );
+												
 										?>
 										</div>
 								  </div>
@@ -164,7 +168,7 @@ foreach ($user['Book'] as $book) {
 					  <div class="tab-pane fade col-xs-12" id="logout">
 						<p class="text-center">
 						<br><br>
-						  <a role="button" href="/users/logout" class="btn btn-danger"><span class="glyphicon glyphicon-log-out"></span> 离开书摊</a>
+						  <a role="button" href="/users/logout" class="btn btn-danger"><span class="glyphicon glyphicon-log-out"></span> 离开书谱</a>
 						<br><br>
 						</p>
 					  </div>

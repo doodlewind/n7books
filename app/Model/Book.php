@@ -1,10 +1,6 @@
 <?php
 class Book extends AppModel {
-	public $belongsTo = array(
-		'User' => array(
-		'className' => 'User', 'foreignKey' => 'user_id'
-			)
-	    );
+	public $belongsTo = array('User' => array('className' => 'User', 'foreignKey' => 'user_id'));
 	
 	public $validate = array(
 	        'title' => array(
@@ -14,7 +10,7 @@ class Book extends AppModel {
 	    );
 	
 	public function beforeSave($options = array()) {
-		if (isset($this->data['Book']['title']) && isset($this->data['Book']['author'])){
+		if (isset($this->data['Book']['update']) && $this->data['Book']['update']=='1'){
 			$douban = new Douban();
 			$this->data['Book']['cover'] = $douban->pattern($this->data['Book']['title'], $this->data['Book']['author']);
 		}
