@@ -5,9 +5,7 @@ class Book extends AppModel {
 	public $validate = array(
 	        'title' => array(
 	            'rule' => 'notEmpty'
-	        ),
-
-	    );
+    ));
 	
 	public function beforeSave($options = array()) {
 		if (isset($this->data['Book']['update']) && $this->data['Book']['update']=='1'){

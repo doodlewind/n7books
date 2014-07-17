@@ -2,280 +2,93 @@
 
 class BooklistsController extends AppController {
 	
-	public function index() {
-		
-	}
-	/*
-	public $helpers = array('Html', 'Form');
 	public $components = array('Paginator');
-	
-	public $paginate = array(
-		'Book' => array(
-	        'limit' => 8,
-	        'order' => array(
-	            'Book.modified' => 'desc'
-		),
-		'fields' => array(
-	        'Book.id',
-			'Book.title',
-			'Book.author',
-			'Book.comment',
-			'Book.cover',
-	        'MIN(Book.price) AS min',
-			'COUNT(Book.title) AS count'
-		),
-		'conditions' => array(
-	        'Book.on_shelf' => '在售'
-		),
-		'group' => 'Book.title'
-	));
 
 	public function index() {
-		$this->set('title_for_layout', '-主页');
+		$condition = array();
+
+		if (!isset($this->request->data['Booklist']['grade']) || $this->request->data['Booklist']['grade'] == 'all') {
+			$condition['grade LIKE'] = '%';
+		}else
+			$condition['grade LIKE \'通用\' OR grade LIKE'] = $this->request->data['Booklist']['grade'];
+		
+		if (!isset($this->request->data['Booklist']['school']) || $this->request->data['Booklist']['school'] == 'all') {
+			$condition['school LIKE'] = '%';
+		}else
+			$condition['school LIKE \'通用\' OR school LIKE'] = $this->request->data['Booklist']['school'];
+		
+		if (!isset($this->request->data['Booklist']['semester']) || $this->request->data['Booklist']['semester'] == 'all') {
+			$condition['semester LIKE'] = '%';
+		}else
+			$condition['semester LIKE \'通用\' OR semester LIKE'] = $this->request->data['Booklist']['semester'];
+		
+		
 		$paginate = array(
-				'Book' => array(
+				'Booklist' => array(
 			        'limit' => 8,
 			        'order' => array(
-			            'Book.modified' => 'desc'
+			            'modified' => 'desc'
 				),
-				'fields' => array(
-			        'Book.id',
-					'Book.title',
-					'Book.author',
-					'Book.comment',
-					'Book.cover',
-			        'MIN(Book.price) AS min',
-					'COUNT(Book.title) AS count'
-				),
-				'conditions' => array(
-			        'Book.on_shelf' => '在售'
-				),
-				'group' => 'Book.title'
+				'conditions' => $condition
 			));
+		$this->Paginator->settings = $paginate;
+		$data = $this->Paginator->paginate('Booklist');
+		$this->set('books', $data);
 		
 		
-		$this->Paginator->settings = $paginate;
-		$data = $this->Paginator->paginate('Book');
-		$this->set('books', $data);
-		/*
-		$this->set('books', $this->Book->find('all',array(
-				'fields' => array(
-				        'Book.id',
-								'Book.title',
-								'Book.author',
-								'Book.comment',
-								'Book.cover',
-				        'MIN(Book.price) AS min',
-							  'COUNT(Book.title) AS count'
-			    ),
-				'group' => 'Book.title'
-			)));
-s
-	}
-	
-	public function category($category = null) {
-		$this->set('title_for_layout', '-'.$category);
-		if (!$category){
-	        $this->Session->setFlash(
-	            __('你要的，小书摊没找到 :-('));
-			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
-		}
-		$paginate = array(
-				'Book' => array(
-			        'limit' => 8,
-			        'order' => array(
-			            'Book.modified' => 'desc'
-				),
-				'fields' => array(
-			        'Book.id',
-					'Book.title',
-					'Book.author',
-					'Book.comment',
-					'Book.cover',
-			        'MIN(Book.price) AS min',
-					'COUNT(Book.title) AS count'
-				),
-				'conditions' => array(
-			        'Book.on_shelf' => '在售',
-					'Book.category' => $category
-				),
-				'group' => 'Book.title',
-		));	
-		$this->Paginator->settings = $paginate;
-		$data = $this->Paginator->paginate('Book');
-		$this->set('books', $data);
-	}
-	
-	public function find() {
-		$title = $this->request->data['Book']['title'];
-		if ($title==null){
-	        $this->Session->setFlash(
-	            __('你要的，小书摊没找到 :-('));
-			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
-		}
-		$this->set('title_for_layout', '-'.$title);
 		
-		$paginate = array(
-				'Book' => array(
-			        'limit' => 10,
-			        'order' => array(
-			            'Book.modified' => 'desc'
-				),
-				'fields' => array(
-			        'Book.id',
-					'Book.title',
-					'Book.author',
-					'Book.comment',
-					'Book.cover',
-			        'MIN(Book.price) AS min',
-					'COUNT(Book.title) AS count'
-				),
-				'conditions' => array(
-					'Book.title LIKE' => '%'.$title.'%',
-			        'Book.on_shelf' => '在售'
-				),
-				'group' => 'Book.title',
-		));
-		$this->Paginator->settings = $paginate;
-		$data = $this->Paginator->paginate('Book');
-		if ( $data==null) {
-      $this->Session->setFlash(
-          __('你要的，小书摊没找到 :-('));
-			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
-		}
-		$this->set('books', $data);
 	}
 	
-	public function view($title = null) {
-		$this->set('title_for_layout', '-详情');
-		if (!$title){
-	        $this->Session->setFlash(
-	            __('你要的，小书摊没找到 :-('));
-			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
-		}
-		$books = $this->Book->findAllByTitle($title);
-		if (!$books) {
-	        $this->Session->setFlash(
-	            __('你要的，小书摊没找到 :-('));
-			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
-		}
-		$this->set('books',$books);
-		foreach ($books as $book){
-			$book['Book']['visit'] += 1;
-			$this->Book->save($book);
-		}
-
-	}
-	
-	public function deal($id = null) {
-	    if ($this->request->is('get')) {
-			return $this->redirect(array( 'controller' => 'user', 'action' => 'index'));
-	    }
-		$data['Book']['id'] = $id;
-		$data['Book']['user_id'] = $this->Auth->user('id');
-		$data['Book']['on_shelf'] = '成交';
-	    if ($this->Book->save($data)) {
-	        $this->Session->setFlash(
-	            __('状态设置成功', h($id))
-	        );
-	        return $this->redirect(array('controller' =>'users', 'action' => 'index'));
-	    }
-	}
-	
-	public function cancel($id = null) {
-	    if ($this->request->is('get')) {
-			return $this->redirect(array( 'controller' => 'user', 'action' => 'index'));
-	    }
-		$data['Book']['id'] = $id;
-		$data['Book']['user_id'] = $this->Auth->user('id');
-		$data['Book']['on_shelf'] = '在售';
-	    if ($this->Book->save($data)) {
-	        $this->Session->setFlash(
-	            __('状态设置成功', h($id))
-	        );
-	        return $this->redirect(array('controller' =>'users', 'action' => 'index'));
-	    }
-	}
-	
-	public function add() {
-		$this->set('title_for_layout', '-传书');
-		if ($this->request->is('post')) {
-			$this->request->data['Book']['user_id'] = $this->Auth->user('id');
-						
-			//不搜索材料封面
-			if ($this->request->data['Book']['type']=='材料'){
-				$this->request->data['Book']['update'] = '0';
-			}
+	public function edit() {
+		if (!$this->request->data ||
+			 isset($this->request->data['Booklist']['find'])) 
+		{
+			$condition = array();
 			
-			$this->Book->create();
-			
-			if ($this->Book->save($this->request->data)) {
-				$this->Session->setFlash(__('上传已完成'));
-				//$douban = new Douban();
-				//echo $douban.pattern($this->request->data['Book']['title'], $this->request->data['Book']['author']);
-				
-				return $this->redirect(array('action' => 'index'));
-			}
-			$this->Session->setFlash(__('上传失败...'));
+			if (!isset($this->request->data['Booklist']['grade']) || $this->request->data['Booklist']['grade'] == 'all') {
+				$condition['grade LIKE'] = '%';
+			}else
+				$condition['grade LIKE \'通用\' OR grade LIKE'] = $this->request->data['Booklist']['grade'];
+		
+			if (!isset($this->request->data['Booklist']['school']) || $this->request->data['Booklist']['school'] == 'all') {
+				$condition['school LIKE'] = '%';
+			}else
+				$condition['school LIKE \'通用\' OR school LIKE'] = $this->request->data['Booklist']['school'];
+		
+			if (!isset($this->request->data['Booklist']['semester']) || $this->request->data['Booklist']['semester'] == 'all') {
+				$condition['semester LIKE'] = '%';
+			}else
+				$condition['semester LIKE \'通用\' OR semester LIKE'] = $this->request->data['Booklist']['semester'];
+
+			$paginate = array(
+					'Booklist' => array(
+				        'limit' => 8,
+				        'order' => array(
+				            'modified' => 'desc'
+					),
+					'conditions' => $condition
+				));		
+			$this->Paginator->settings = $paginate;
+			$data = $this->Paginator->paginate('Booklist');
+			$this->set('books', $data);
 		}
-	}
-	
-	public function edit($id = null) {
-			$this->set('title_for_layout', '-编辑详情');
-			if (!$id) {
-				throw new NotFoundException(__('Invalid Book'));
+		else {
+			if($this->Booklist->save($this->request->data)) {
+		        $this->Session->setFlash(__('已成功编辑 :D'));
 			}
+	        else $this->Session->setFlash(__('字段不合要求，编辑失败 >_<'));
+			return $this->redirect(array( 'controller' => 'booklists', 'action' => 'edit'));
 			
-    	$book = $this->Book->findById($id);
-			//已成交书籍不能编辑
-	    if (!$book || !($book['Book']['on_shelf']=='在售') ) {
-	        throw new NotFoundException(__('Invalid Book'));
-	    }
-
-	    if ($this->request->is(array('post', 'put'))) {
-					
-					if ($this->request->data['Book']['type']=='材料') {
-						$this->request->data['Book']['updata'] = '0';
-					}
-					
-	        if ($this->Book->save($this->request->data)) {
-	            $this->Session->setFlash(__('编辑已保存'));
-	            return $this->redirect(array('controller' => 'users', 'action' => 'index'));
-	        }
-	        $this->Session->setFlash(__('编辑失败...'));
-	    }
-
-	    if (!$this->request->data) {
-	        $this->request->data = $book;
-	    }
+		}	
 	}
 	
 	public function delete($id) {
 	    if ($this->request->is('get')) {
 					return $this->redirect(array('action' => 'index'));
-	        //throw new MethodNotAllowedException();
 	    }
-	    if ($this->Book->delete($id)) {
-	        $this->Session->setFlash(
-	            __('书本已删除 >_<')
-	        );
-	        return $this->redirect(array('controller'=>'users', 'action' => 'index'));
+	    if ($this->Booklist->delete($id)) {
+	        $this->Session->setFlash(__('已成功删除 >_<'));
+	        return $this->redirect(array('controller'=>'booklists', 'action' => 'edit'));
 	    }
 	}
-	
-	
-	public function isAuthorized($user) {
-    // All registered users can add posts
-	    if ($this->action === 'add') {
-	        return true;
-	    }
-		/*
-	    // The owner of a post can edit and delete it
-	    if (in_array($this->action, array('edit', 'delete'))) {
-	        $bookId = (int) $this->request->params['pass']['id'];
-			if ($this->Book->isOwnedBy($bookId, $user['id'])) return true;
-	    }
-	    return parent::isAuthorized($user);
-	}
-	*/
 }

@@ -30,6 +30,7 @@
 			    -webkit-box-shadow: 0 3px 3px rgba(32, 32, 32, .08);
 			    box-shadow: 0 3px 3px rgba(32, 32, 32, .28);
 			}
+
 			
 	</style><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,12 +53,15 @@
 				<a href="/books/add" class="visible-xs navbar-brand" role="button">
 					<span class="glyphicon glyphicon-plus"></span>
 				</a>
-				<a href="/users" class="visible-xs navbar-brand" role="button">
-					<span class="glyphicon glyphicon-user"></span>
+				<a href="/booklists" class="visible-xs navbar-brand" role="button">
+					<span class="glyphicon glyphicon-star"></span>
 				</a>
 				<li class="visible-xs navbar-brand dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list"></span><span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
+						<li>
+							<a href="/users"><b>我的</b></a>
+						</li>
 						<li>
 							<a href="/books/category/数理">数理</a>
 						</li>
@@ -103,6 +107,11 @@
 					<a href="/books/add" class="hidden-xs btn btn-primary" role="button"><span class="glyphicon glyphicon-plus">传书</span></a>
 				</form>
 				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="/booklists">
+							<span class="glyphicon glyphicon-star"></span> 书单
+						</a>
+					</li>
 					<li class="dropdown hidden-xs">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list"></span> 分类 <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
@@ -129,8 +138,9 @@
 							</li>
 						</ul>
 					</li>
-					<li >
-						<a href="/users/"><span class="glyphicon glyphicon-user"></span> 我的</a>
+					<li>
+						<a href="/users/"><span class="glyphicon glyphicon-user"></span> 我的
+						</a>
 					</li>
 				</ul>
 			</div><!--/.nav-collapse -->
@@ -142,7 +152,6 @@
 				<?php echo $this->Session->flash('flash', array(
 						'element' => 'failure'
 						));
-
 				?>
 				<?php echo $this->fetch('content'); ?>
 				<?php //echo $this->element('sql_dump'); ?>
@@ -155,7 +164,8 @@
         <br><br><br><p class="text-center">
 			<small>2014 南七书谱 - ackn. <a href="https://freeshell.ustc.edu.cn">Freeshell</a> 
 				| <a href="http://glyphicons.com">glyphicons</a>
-				| <a href="http://cakephp.org">cakePHP</a></small>
+				| <a href="http://cakephp.org">cakePHP</a>
+				| <a href="/booklists/edit">edit</a></small>
 		</p>
       </div>
     </div>
