@@ -10,6 +10,12 @@ class User extends AppModel {
 							'foreignKey' => 'user_id',
 							'order' => 'Book.created DESC',
 	            'dependent' => true
+	        ),
+	        'Follow' => array(
+	            'className' => 'Follow',
+							'foreignKey' => 'user_id',
+							'order' => 'created DESC',
+	            'dependent' => true
 	        )
 	    );
 

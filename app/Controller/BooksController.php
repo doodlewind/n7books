@@ -164,6 +164,25 @@ class BooksController extends AppController {
 
 	}
 	
+	public function detail($id = null) {
+		$this->set('title_for_layout', '-详情');
+		if (!$id){
+	        $this->Session->setFlash(
+	            __('你要的，小书摊没找到 :-('));
+			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
+		}
+		$book = $this->Book->findById($id);
+		if (!$book) {
+	        $this->Session->setFlash(
+	            __('你要的，小书摊没找到 :-('));
+			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
+		}
+		$this->set('item',$book);
+		$book['Book']['visit'] += 1;
+		$this->Book->save($book);
+
+	}
+	
 	public function deal($id = null) {
 	    if ($this->request->is('get')) {
 			return $this->redirect(array( 'controller' => 'user', 'action' => 'index'));

@@ -53,14 +53,14 @@
 				<a href="/books/add" class="visible-xs navbar-brand" role="button">
 					<span class="glyphicon glyphicon-plus"></span>
 				</a>
-				<a href="/booklists" class="visible-xs navbar-brand" role="button">
-					<span class="glyphicon glyphicon-star"></span>
+				<a href="/users" class="visible-xs navbar-brand" role="button">
+					<span class="glyphicon glyphicon-user"></span>
 				</a>
 				<li class="visible-xs navbar-brand dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list"></span><span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<li>
-							<a href="/users"><b>我的</b></a>
+							<a href="/booklists"><b>书单</b><span class="glyphicon glyphicon-star"></a>
 						</li>
 						<li>
 							<a href="/books/category/数理">数理</a>

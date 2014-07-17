@@ -39,7 +39,20 @@ class UsersController extends AppController {
 		$this->set('user', $this->User->findById($user_id));
 	}
 
-
+	public function view($id = null) {
+		if (!isset($id)) {
+			$this->Session->setFlash(__('你访问的用户不存在..。 :-( )'));
+			return $this->redirect(array('controller'=>'books', 'action' => 'index'));
+		}
+		$user = $this->User->findById($id);
+		
+		if(!isset($user)) {
+			return $this->redirect(array('controller'=>'books', 'action' => 'index'));
+		}
+		$this->set('user', $user);
+		
+	}
+	
 	public function add() {
 		$this->set('title_for_layout', '-注册');
 		if ($this->request->is('post')) {
@@ -48,7 +61,7 @@ class UsersController extends AppController {
 	    	if ($this->User->save($this->request->data)) {
 				$this->Auth->login();
 	        	$this->Session->setFlash(__($username.'，欢迎来到南七书摊！'));
-	        	return $this->redirect(array('controller'=>'books', 'action' => 'index'));
+	        	return $this->redirect(array('controller'=>'users', 'action' => 'guide'));
 	    	}
 	    	$this->Session->setFlash(
 	        	__('更改无法保存...请重试')
@@ -57,17 +70,37 @@ class UsersController extends AppController {
 	}
 
 	public function edit($id = null) {
-	//	print_r($this->request->data);
-	//	return;
     	if ($this->User->save($this->request->data)) {
         	$this->Session->setFlash(__('更改已保存'));
         	return $this->redirect(array('action' => 'index'));
     	}
     	$this->Session->setFlash(
-        	__('更改无法保存...请重试')
+        	__('未保存...')
     	);
 			return $this->redirect(array('action' => 'index'));
 
+	}
+	
+	public function guide() {
+		$id = $this->Auth->user('id');
+		if(!$this->request->data){
+			$id = $this->Auth->user('id');
+			$this->set('id', $id);
+			$data = $this->User->findById($id);
+			$this->set('data', $data);
+			return;
+		}
+		else {
+			$this->request->data['User']['id'] = $id;
+	    	if ($this->User->save($this->request->data)) {
+	        	$this->Session->setFlash(__('谢谢，更改已保存'));
+	        	return $this->redirect(array('controller' => 'books', 'action' => 'index'));
+	    	}
+	    	$this->Session->setFlash(
+	        	__('未保存...')
+	    	);
+				return $this->redirect(array('controller' => 'books','action' => 'index'));
+		}
 	}
 	/*
 	public function delete($id = null) {

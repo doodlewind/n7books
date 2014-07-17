@@ -1,7 +1,4 @@
-
-<?php
-echo $this->element('booklist_edit');
-?>
+<?php echo $this->element('booklist_edit'); ?>
 <br>
 	  <table class="table table-hover">
 			<tbody>

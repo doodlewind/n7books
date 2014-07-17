@@ -1,5 +1,4 @@
 <div class="col-md-8 col-md-offset-2">
-<?php foreach ($books as $item) { ?>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<?php echo $item['Book']['title'].' - '.$item['Book']['author']; ?>
@@ -68,6 +67,4 @@
 			</div>
 	  </div>
 	</div>
-<?php } ?>
-
 </div>
