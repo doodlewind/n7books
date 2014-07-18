@@ -16,6 +16,10 @@ class User extends AppModel {
 							'foreignKey' => 'user_id',
 							'order' => 'created DESC',
 	            'dependent' => true
+	        ),
+	        'Booklist' => array(
+	            'className' => 'Booklist',
+				'foreignKey' => 'grade'
 	        )
 	    );
 

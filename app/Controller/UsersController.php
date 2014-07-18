@@ -3,6 +3,7 @@
 class UsersController extends AppController {
 	public $helpers = array('Html', 'Form');
 	
+	
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Auth->allow('add');
@@ -37,6 +38,7 @@ class UsersController extends AppController {
 		$this->set('title_for_layout', '-'.$this->Auth->user('username'));
 		//通过匹配Auth的user_id，获得用户书籍信息
 		$this->set('user', $this->User->findById($user_id));
+
 	}
 
 	public function view($id = null) {

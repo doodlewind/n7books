@@ -33,10 +33,7 @@ class BooklistsController extends AppController {
 			));
 		$this->Paginator->settings = $paginate;
 		$data = $this->Paginator->paginate('Booklist');
-		$this->set('books', $data);
-		
-		
-		
+		$this->set('books', $data);	
 	}
 	
 	public function edit() {
@@ -81,7 +78,7 @@ class BooklistsController extends AppController {
 			
 		}	
 	}
-	
+		
 	public function delete($id) {
 	    if ($this->request->is('get')) {
 					return $this->redirect(array('action' => 'index'));
@@ -91,4 +88,15 @@ class BooklistsController extends AppController {
 	        return $this->redirect(array('controller'=>'booklists', 'action' => 'edit'));
 	    }
 	}
+/*	
+	public function recommend() {
+		$grade = $this->Auth->user('id');
+		echo ($grade);
+		$this->set('booklists', $this->Booklist->find('all',array(
+			'conditions' => array(
+				'grade' => $grade,
+				'school' => $school
+		))));
+	}
+*/
 }
