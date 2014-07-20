@@ -25,6 +25,11 @@ class BooksController extends AppController {
 		'group' => 'Book.title'
 	));
 
+	public function demo() {
+		
+	}
+
+
 	public function index() {
 		$this->set('title_for_layout', '-主页');
 		$paginate = array(
@@ -101,11 +106,10 @@ class BooksController extends AppController {
 		$this->set('books', $data);
 	}
 	
-	public function find($title) {
-		if(!$title)
-			$title = $this->request->data['Book']['title'];
+	public function find() {
+		$title = $this->request->data['Book']['title'];
 		
-		if ($title==null){
+		if (!isset($title)){
 	        $this->Session->setFlash(
 	            __('你要的，小书摊没找到 :-( '));
 			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
