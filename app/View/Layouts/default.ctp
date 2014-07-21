@@ -42,7 +42,7 @@
 <body>
 	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
-			<div class="navbar-header">			
+			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
 					<span class=" glyphicon glyphicon-chevron-down"></span>
@@ -139,7 +139,7 @@
 						</ul>
 					</li>
 					<li>
-						<a href="/users/"><span class="glyphicon glyphicon-user"></span> 我的
+						<a href="/users/"><span class="glyphicon glyphicon-user"></span> 用户
 						</a>
 					</li>
 				</ul>

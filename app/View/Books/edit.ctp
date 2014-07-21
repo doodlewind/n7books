@@ -114,7 +114,7 @@
    
 	 <div class="checkbox">
 	   <label>
-	     <input name="data[Book][update]" id="BookUpdate" type="checkbox" value="1">更新封面
+	     <input name="data[Book][update]" id="BookUpdate" type="checkbox" value="1" checked> 封面
 	   </label>
 	 </div>
 	 
@@ -126,11 +126,11 @@
 	     <div class="input-group">
 	       <div class="input-group-addon">￥</div>
 				 <?php
-					 echo $this->Form->input('price',
-				 						array('label' => '',
-													'class' => 'form-control',
-													'placeholder' => '0-100 整数'
-												 ));
+					 echo $this->Form->input('price',array(
+						 'label' => '',
+						 'class' => 'form-control',
+						 'placeholder' => '0-100 整数'
+					 ));
 				 ?>
 	     </div>
 	   </div>

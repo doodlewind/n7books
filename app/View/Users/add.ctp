@@ -47,6 +47,9 @@
 						'before' => '<br>',
 						'div' => false
 					) );?>
+					 &nbsp;&nbsp;<label class="checkbox-inline"><small>
+					   <input type="checkbox" id="inlineCheckbox1" value="option1" checked>同意<a>用户协议</a>
+					 </label></small>
 				</div>
 		</div>
 	</div>

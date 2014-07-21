@@ -1,5 +1,5 @@
 <div class="col-xs-12">
-	<h2><a>敬爱的<?php echo $data['User']['username']?>大神 ，<br><small>您大驾光临，南七书谱蓬荜生辉！<small></a></h2>
+	<h2><a>亲爱的<?php echo $data['User']['username']?>大神 ，<br><small>欢迎光临南七书谱！<small></a></h2>
 	<hr>
 	<h4><small>不妨完善信息，以便看到更好的书谱</small></h4>
 	<h4><small>您还可在<a href="/users/index">这里的 「关注」面板中</a>添加想要的书籍</small></h4>

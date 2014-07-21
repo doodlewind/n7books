@@ -221,11 +221,11 @@ class BooksController extends AppController {
 		$this->set('title_for_layout', '-传书');
 		if ($this->request->is('post')) {
 			$this->request->data['Book']['user_id'] = $this->Auth->user('id');
-						
-			//不搜索材料封面
+			
+
 			if ($this->request->data['Book']['type']=='材料'){
 				$this->request->data['Book']['update'] = '0';
-			}
+			}else $this->request->data['Book']['update'] = '1';
 			
 			$this->Book->create();
 			
@@ -255,7 +255,7 @@ class BooksController extends AppController {
 	    if ($this->request->is(array('post', 'put'))) {
 					
 					if ($this->request->data['Book']['type']=='材料') {
-						$this->request->data['Book']['updata'] = '0';
+						$this->request->data['Book']['update'] = '0';
 					}
 					
 	        if ($this->Book->save($this->request->data)) {

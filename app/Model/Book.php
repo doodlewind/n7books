@@ -6,16 +6,22 @@ class Book extends AppModel {
 	        'title' => array(
 	            'rule' => 'notEmpty'
     ));
-	
+
 	public function beforeSave($options = array()) {
+		//replace all [ ] : ` ~ " ' @ ^ & * ：/
+		$this->data['Book']['title'] = preg_replace('/[\[:\/：\]\`~\'@^&*"]/u', ' ',
+		$this->data['Book']['title'] );
+		
 		if (isset($this->data['Book']['update']) && $this->data['Book']['update']=='1'){
 			$douban = new Douban();
 			$this->data['Book']['cover'] = $douban->pattern($this->data['Book']['title'], $this->data['Book']['author']);
+		}else $this->data['Book']['cover'] = '';
+		
+		if (isset($this->data['Book']['price']) && $this->data['Book']['price']=='') {
+			$this->data['Book']['price'] = '0';
 		}
+		
 	    return true;
 	}
-	
-	public function isOwnedBy($book, $user) {
-	    return $this->field('id', array('id' => $book, 'user_id' => $user)) !== false;
-	}
+
 }

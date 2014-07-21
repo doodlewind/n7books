@@ -19,7 +19,6 @@
 			?>
 		<span class="help-block text-right">重置密码</span>
 	</div>
-
 	<div class="col-sm-4 col-sm-offset-5">
 		<p class="text-right">
 		<a class="btn btn-info" href="/users/add">注册</a>
