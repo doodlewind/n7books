@@ -31,7 +31,7 @@
 	<div class="col-xs-12 col-md-offset-3">
 		<div class="btn-group" data-toggle="buttons">
 			<?php
-				$categories = array('数理','生化','信息','工程','外语','社科','其它');
+				$categories = array('数理','生化','信息','工程','外语','社科','杂家');
 				$select = '';
 				
 				foreach ($categories as $category){

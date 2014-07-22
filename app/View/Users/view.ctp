@@ -11,6 +11,7 @@
 $count = 0;
 foreach($user['Book'] as $book) {
 	$count += $book['visit'];
+	if ($book['on_shelf']=='成交') continue;
 ?>
 				<tr>
 					<td>

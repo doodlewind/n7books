@@ -81,7 +81,7 @@
 							<a href="/books/category/社科">社科</a>
 						</li>
 						<li>
-							<a href="/books/category/其它">其它</a>
+							<a href="/books/category/杂家">杂家</a>
 						</li>
 					</ul>
 				</li>				
@@ -134,7 +134,7 @@
 								<a href="/books/category/社科">社科</a>
 							</li>
 							<li>
-								<a href="/books/category/其它">其它</a>
+								<a href="/books/category/杂家">杂家</a>
 							</li>
 						</ul>
 					</li>

@@ -38,7 +38,7 @@
 			<label class="btn btn-default"><input type="radio" name="data[Book][category]" value="工程"> 工程</label> 
 			<label class="btn btn-default"><input type="radio" name="data[Book][category]" value="外语"> 外语</label> 
 			<label class="btn btn-default"><input type="radio" name="data[Book][category]" value="社科"> 社科</label> 
-			<label class="btn btn-default"><input type="radio" name="data[Book][category]" value="杂家"> 其它</label>
+			<label class="btn btn-default"><input type="radio" name="data[Book][category]" value="杂家"> 杂家</label>
 		</div>
 	</div>
 </div>
