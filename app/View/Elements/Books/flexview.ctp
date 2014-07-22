@@ -9,10 +9,11 @@ for ($i = 0; $i < $sum; $i++) {
 			<div class="col-xs-5 col-sm-12 col-md-12">
 				<div class="thumbnail">
 					<?php
+					echo '<a href="/books/view/'.$books[$i]['Book']['title'].'">';
 					if ($books[$i]['Book']['cover']) {
-						echo '<img src="'.$books[$i]['Book']['cover'].'">';
+						echo '<img src="'.$books[$i]['Book']['cover'].'"></a>';
 					}else
-						echo '<img data-src="holder.js/100x150//text:'.$books[$i]['Book']['title'].'">';
+						echo '<img data-src="holder.js/100x150//text:'.$books[$i]['Book']['title'].'"></a>';
 					?>
 				</div>
 			</div>
@@ -22,7 +23,6 @@ for ($i = 0; $i < $sum; $i++) {
 					echo $this->Html->link( $books[$i]['Book']['title'],
 						array('controller' => 'books', 'action' => 'view',$books[$i]['Book']['title'])
 						);
-					
 					?></h4>
 				<h6  class="text-right">
 					<?php echo '"'.$books[$i]['Book']['comment'].'"';?>

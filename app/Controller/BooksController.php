@@ -26,7 +26,12 @@ class BooksController extends AppController {
 	));
 
 	public function demo() {
-		
+		//$this->render();
+	    $email = new CakeEmail('default');
+	       $email->config('default');
+	       $email->to('814113672@qq.com');
+	       $email->subject('Approved');
+	       $email->send('This is a test message');
 	}
 
 

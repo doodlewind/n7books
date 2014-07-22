@@ -17,7 +17,7 @@
 				echo $this->Form->input('password',
 					array('label' => '密码', 'class' => 'form-control', 'placeholder' => ''));
 			?>
-		<span class="help-block text-right">重置密码</span>
+		<span class="help-block text-right"><a href="/users/reset">忘记密码</a></span>
 	</div>
 	<div class="col-sm-4 col-sm-offset-5">
 		<p class="text-right">

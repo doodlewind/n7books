@@ -1,5 +1,7 @@
 <?php
-// app/Controller/UsersController.php
+App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
+
 class UsersController extends AppController {
 	public $helpers = array('Html', 'Form');
 	
@@ -22,7 +24,11 @@ class UsersController extends AppController {
 		        $this->Session->setFlash(__('不匹配啊...'));
 		}
 	}
-
+	
+	public function reset() {
+		
+	}
+	
 	public function logout() {
 		return $this->redirect($this->Auth->logout());
 	}
