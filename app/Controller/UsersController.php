@@ -63,7 +63,6 @@ class UsersController extends AppController {
 		//踢出未登录用户
 		$user_id = $this->Auth->user('id');
 		if (!$user_id) {
-			$this->Session->setFlash(__('学霸，登入后才可以继续哦 :-D '));
 			return $this->redirect(array('action' => 'login'));
 		}
 		//

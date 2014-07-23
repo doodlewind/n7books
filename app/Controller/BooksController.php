@@ -53,7 +53,8 @@ class BooksController extends AppController {
 				),
 				'group' => 'Book.title'
 			));
-		
+
+			
 		
 		$this->Paginator->settings = $paginate;
 		$data = $this->Paginator->paginate('Book');
@@ -233,9 +234,6 @@ class BooksController extends AppController {
 			
 			if ($this->Book->save($this->request->data)) {
 				$this->Session->setFlash(__('上传已完成'));
-				//$douban = new Douban();
-				//echo $douban.pattern($this->request->data['Book']['title'], $this->request->data['Book']['author']);
-				
 				return $this->redirect(array('action' => 'index'));
 			}
 			$this->Session->setFlash(__('上传失败...'));

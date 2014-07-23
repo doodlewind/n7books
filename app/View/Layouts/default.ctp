@@ -30,8 +30,6 @@
 			    -webkit-box-shadow: 0 3px 3px rgba(32, 32, 32, .08);
 			    box-shadow: 0 3px 3px rgba(32, 32, 32, .28);
 			}
-
-			
 	</style><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -139,8 +137,14 @@
 						</ul>
 					</li>
 					<li>
-						<a href="/users/"><span class="glyphicon glyphicon-user"></span> 用户
+						<?php if (isset($login)) {?>
+						<a href="/users/"><span class="glyphicon glyphicon-user"></span> 登入
 						</a>
+						<?php  } else {?>
+						<a href="/users/"><span class="glyphicon glyphicon-user"></span> 我的
+						</a>
+						<?php  }?>
+						
 					</li>
 				</ul>
 			</div><!--/.nav-collapse -->
