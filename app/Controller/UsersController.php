@@ -5,10 +5,20 @@ App::uses('CakeEmail', 'Network/Email');
 class UsersController extends AppController {
 	public $helpers = array('Html', 'Form');
 	
+	private function newPassword($length) {
+		$str = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$randString = '';
+		$len = strlen($str)-1;
+		for($i = 0; $i < $length; $i ++){ 
+			$num = mt_rand(0, $len);
+			$randString.= $str[$num]; 
+		} 
+		return $randString ;
+	}
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('add');
+		$this->Auth->allow('add', 'view', 'reset');
 	}
 
 	public function welcome() {
@@ -26,7 +36,23 @@ class UsersController extends AppController {
 	}
 	
 	public function reset() {
-		
+		if (isset($this->request->data['User']['email'])) {
+			$user = $this->User->findByEmail($this->request->data['User']['email']);
+			if (!isset($user['User']['id'])) {
+				$this->Session->setFlash(__('奇怪的账号:-( '));
+				return;
+			}
+			$user['User']['password'] = $this->newPassword(10);
+			$this->User->save($user);
+			
+		    $email = new CakeEmail('default');
+		       $email->config('default');
+		       $email->to($this->request->data['User']['email']);
+		       $email->subject('New Password');
+		       $email->send('Your new password is '.$user['User']['password']);
+			$this->Session->setFlash(__('已将新密码发送至该邮箱。若未收到，请检查垃圾箱，或将 note@bookface.ustc.edu.cn 添加至白名单。'));
+			return $this->redirect(array('action' => 'login'));
+		}
 	}
 	
 	public function logout() {

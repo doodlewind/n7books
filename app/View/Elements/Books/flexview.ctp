@@ -9,7 +9,7 @@ for ($i = 0; $i < $sum; $i++) {
 			<div class="col-xs-5 col-sm-12 col-md-12">
 				<div class="thumbnail">
 					<?php
-					echo '<a href="/books/view/'.$books[$i]['Book']['title'].'">';
+					echo '<a target="_blank" href="/books/view/'.$books[$i]['Book']['title'].'">';
 					if ($books[$i]['Book']['cover']) {
 						echo '<img src="'.$books[$i]['Book']['cover'].'"></a>';
 					}else
@@ -19,11 +19,14 @@ for ($i = 0; $i < $sum; $i++) {
 			</div>
 			<div class="col-xs-7 col-sm-12 col-md-12">
 				<h3 class="text-left"><small>￥<?php echo $books[$i][0]['min'];?>起 <span class="label label-default"><?php echo $books[$i][0]['count'];?>本</span></small></h3>
-				<h4 class="text-right"><?php 
-					echo $this->Html->link( $books[$i]['Book']['title'],
-						array('controller' => 'books', 'action' => 'view',$books[$i]['Book']['title'])
-						);
-					?></h4>
+				<h5 class="text-right"><?php 
+					echo $this->Html->link( $books[$i]['Book']['title'],array(
+						'controller' => 'books',
+						'action' => 'view',$books[$i]['Book']['title'],
+						),
+						array('target'=>'_blank')
+					);
+					?></h5>
 				<h6  class="text-right">
 					<?php echo '"'.$books[$i]['Book']['comment'].'"';?>
 				</h6>

@@ -27,11 +27,7 @@ class BooksController extends AppController {
 
 	public function demo() {
 		//$this->render();
-	    $email = new CakeEmail('default');
-	       $email->config('default');
-	       $email->to('814113672@qq.com');
-	       $email->subject('Approved');
-	       $email->send('This is a test message');
+	    
 	}
 
 
@@ -165,6 +161,7 @@ class BooksController extends AppController {
 	            __('你要的，小书摊没找到 :-('));
 			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
 		}
+		
 		$this->set('books',$books);
 		foreach ($books as $book){
 			$book['Book']['visit'] += 1;
