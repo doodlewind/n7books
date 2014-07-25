@@ -26,17 +26,7 @@ class BooksController extends AppController {
 	));
 
 	public function demo() {
-		$douban = new Douban();
-		$books = $this->Book->find('all');
-		$log = '';
-		foreach ($books as $book) {
-			if ($book['Book']['comment']=='影印书') {
-				$book['Book']['cover'] = $douban->pattern($book['Book']['title'], $book['Book']['author']);
-				$log.= $book['Book']['title'].' DONE<br>';
-			}
-			$this->Book->save($book);
-		}
-		$this->set('log', $log);
+		return;
 	}
 
 	public function index() {
