@@ -1,6 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">学霸: <?php echo $user['User']['username']?></h3>
+    <h3 class="panel-title"><?php echo $user['User']['username']?>的名片</h3>
   </div>
   <div class="panel-body">
     <div class="col-xs-12">
@@ -9,21 +9,35 @@
 			<tbody>
 <?php 
 $count = 0;
-foreach($user['Book'] as $book) {
-	$count += $book['visit'];
-	if ($book['on_shelf']=='成交') continue;
+foreach($books as $book) {
+	$count += $book['Book']['visit'];
+	if ($book['Book']['on_shelf']=='成交') continue;
 ?>
 				<tr>
 					<td>
-<?php echo '<a href="/books/detail/'.$book['id'].'">'.$book['title'].'</a>'; ?>
+<?php echo '<a href="/books/detail/'.$book['Book']['id'].'">'.$book['Book']['title'].'</a>'; ?>
 					</td>
-					<td><?php echo $book['author'];?></td>
-					<td><b>￥<?php echo $book['price']?></b></td>
-						<td><small>『<?php echo $book['comment']?>』</small></td>
+					<td><?php echo $book['Book']['author'];?></td>
+					<td><b>￥<?php echo $book['Book']['price']?></b></td>
+						<td><small>『<?php echo $book['Book']['comment']?>』</small></td>
 				</tr>
 <?php } ?>
 			</tbody>
 		</table>
+		<div class="col-xs-12 ">
+			<ul class="pagination">
+				<?php 
+				echo $this->Paginator->numbers(array(
+					'first' => '<<',
+					'last' => '>>',
+					'tag' => 'li',
+					'separator' => '',
+					'currentTag' => 'a',
+					'currentClass' => 'active'
+				));
+				?>
+			</ul>
+		</div>
 	</div>
 	<div class="col-xs-12">
 		<h4><a>TA 是...</a></h4>

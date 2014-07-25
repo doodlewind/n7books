@@ -74,7 +74,7 @@ class AppController extends Controller {
 			</button>
 			学霸，登入后才可以继续哦 :-D <a href="/books">返回</a>
 			</div>';
-			
+
 		//ugly hack to define button text by login state 
 		$user_id = $this->Auth->user('id');
 		if (!$user_id) {

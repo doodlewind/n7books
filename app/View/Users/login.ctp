@@ -22,7 +22,7 @@
 	<div class="col-sm-4 col-sm-offset-5">
 		<p class="text-right">
 		<a class="btn btn-info" href="/users/add">注册</a>
-		<input class="btn btn-primary" type="submit" value="登录">
+		<input class="btn btn-primary" type="submit" value="登入">
 		</p>
 	</div>
 

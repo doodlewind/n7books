@@ -26,10 +26,18 @@ class BooksController extends AppController {
 	));
 
 	public function demo() {
-		//$this->render();
-	    
+		$douban = new Douban();
+		$books = $this->Book->find('all');
+		$log = '';
+		foreach ($books as $book) {
+			if ($book['Book']['comment']=='影印书') {
+				$book['Book']['cover'] = $douban->pattern($book['Book']['title'], $book['Book']['author']);
+				$log.= $book['Book']['title'].' DONE<br>';
+			}
+			$this->Book->save($book);
+		}
+		$this->set('log', $log);
 	}
-
 
 	public function index() {
 		$this->set('title_for_layout', '-主页');
@@ -53,26 +61,9 @@ class BooksController extends AppController {
 				),
 				'group' => 'Book.title'
 			));
-
-			
-		
 		$this->Paginator->settings = $paginate;
 		$data = $this->Paginator->paginate('Book');
 		$this->set('books', $data);
-		/*
-		$this->set('books', $this->Book->find('all',array(
-				'fields' => array(
-				        'Book.id',
-								'Book.title',
-								'Book.author',
-								'Book.comment',
-								'Book.cover',
-				        'MIN(Book.price) AS min',
-							  'COUNT(Book.title) AS count'
-			    ),
-				'group' => 'Book.title'
-			)));
-		*/
 	}
 	
 	public function category($category = null) {

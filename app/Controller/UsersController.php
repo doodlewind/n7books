@@ -4,6 +4,7 @@ App::uses('CakeEmail', 'Network/Email');
 
 class UsersController extends AppController {
 	public $helpers = array('Html', 'Form');
+	public $components = array('Paginator');
 	
 	private function newPassword($length) {
 		$str = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -79,6 +80,32 @@ class UsersController extends AppController {
 		}
 		$user = $this->User->findById($id);
 		
+		$paginate = array(
+				'Book' => array(
+			        'limit' => 10,
+			        'order' => array(
+			            'Book.modified' => 'desc'
+				),
+				'fields' => array(
+			        'Book.id',
+					'Book.title',
+					'Book.author',
+					'Book.price',
+					'Book.comment',
+					'Book.visit',
+					'Book.on_shelf',
+				),
+				'conditions' => array(
+			        'Book.user_id' => $id
+				)
+		));
+		$this->Paginator->settings = $paginate;
+		$data = $this->Paginator->paginate('Book');
+		$this->set('books', $data);
+		
+		
+		
+		
 		if(!isset($user)) {
 			return $this->redirect(array('controller'=>'books', 'action' => 'index'));
 		}
@@ -93,7 +120,6 @@ class UsersController extends AppController {
 			$username = $this->request->data['User']['username'];
 	    	if ($this->User->save($this->request->data)) {
 				$this->Auth->login();
-	        	$this->Session->setFlash(__($username.'，欢迎来到南七书摊！'));
 	        	return $this->redirect(array('controller'=>'users', 'action' => 'guide'));
 	    	}
 	    	$this->Session->setFlash(

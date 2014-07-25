@@ -30,15 +30,13 @@
 					<input name="data[User][password]" class="form-control" type="password" id="UserPassword"
 					placeholder="6-16 位字母/数字" required="required"><br>
 				</div><br>
-				
 				<div class="col-xs-12 col-xs-offset-3">	
-				
 					<div class="btn-group" data-toggle="buttons">
 						<label class="btn btn-default active">
-							<input type="radio" name="data[Book][category]" value="东区">东区
+							<input type="radio" name="data[User][campus]" value="东区"checked>东区
 						</label>
-						<label class="btn btn-default ">
-							<input type="radio" name="data[Book][category]" value="西区" checked="">西区
+						<label class="btn btn-default">
+							<input type="radio" name="data[User][campus]" value="西区">西区
 						</label>											
 					</div><br>
 					<?php echo $this->Form->end(
