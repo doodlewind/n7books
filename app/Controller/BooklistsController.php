@@ -6,25 +6,32 @@ class BooklistsController extends AppController {
 
 	public function index() {
 		
-		$grade = $this->Auth->user('grade');
-		$school = $this->Auth->user('school');
-		if(isset($grade) && isset($school)) {
-			$conditions = compact('grade', 'school');
-		}else $conditions = null;
-		$recommands = $this->Booklist->find('all', array(
-			'conditions' => $conditions,
-			'fields' => array('DISTINCT title', 'author', 'course', 'school'),
-			'order' => 'rand()'
-		));
-		$this->set('recommands', $recommands);
+		//no POST data
+		if (!$this->request->data) {
+			$grade = $this->Auth->user('grade');
+			$school = $this->Auth->user('school');
+			if(isset($grade) && isset($school)) {
+				$conditions = compact('grade', 'school');
+			}else return;
+			$recommands = $this->Booklist->find('all', array(
+				'conditions' => $conditions,
+				'fields' => array('DISTINCT title', 'author', 'course', 'school'),
+				'order' => 'rand()'
+			));
+			$this->set('recommands', $recommands);
+			//when POST data isn't exist, avoid finding all books
+			return;
+		}
 		
-		//in case of direct visit from navbar
-		if (!$this->request->data) return;
-		
+		//process the POST request
 		$conditions = $this->postConditions($this->request->data);
 		$fields = array('DISTINCT title', 'author', 'course', 'school');
 		$data = $this->Booklist->find('all', compact('conditions', 'fields')); 
 		$this->set('books', $data);
+		
+		
+		
+		
 	}
 	
 	public function edit() {
