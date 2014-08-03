@@ -5,71 +5,40 @@ class BooklistsController extends AppController {
 	public $components = array('Paginator');
 
 	public function index() {
-		$condition = array();
-
-		if (!isset($this->request->data['Booklist']['grade']) || $this->request->data['Booklist']['grade'] == 'all') {
-			$condition['grade LIKE'] = '%';
-		}else
-			$condition['grade LIKE \'通用\' OR grade LIKE'] = $this->request->data['Booklist']['grade'];
 		
-		if (!isset($this->request->data['Booklist']['school']) || $this->request->data['Booklist']['school'] == 'all') {
-			$condition['school LIKE'] = '%';
-		}else
-			$condition['school LIKE \'通用\' OR school LIKE'] = $this->request->data['Booklist']['school'];
+		$grade = $this->Auth->user('grade');
+		$school = $this->Auth->user('school');
+		if(isset($grade) && isset($school)) {
+			$conditions = compact('grade', 'school');
+		}else $conditions = null;
+		$recommands = $this->Booklist->find('all', array(
+			'conditions' => $conditions,
+			'fields' => array('DISTINCT title', 'author', 'course', 'school'),
+			'order' => 'rand()'
+		));
+		$this->set('recommands', $recommands);
 		
-		if (!isset($this->request->data['Booklist']['semester']) || $this->request->data['Booklist']['semester'] == 'all') {
-			$condition['semester LIKE'] = '%';
-		}else
-			$condition['semester LIKE \'通用\' OR semester LIKE'] = $this->request->data['Booklist']['semester'];
+		//in case of direct visit from navbar
+		if (!$this->request->data) return;
 		
-		
-		$paginate = array(
-				'Booklist' => array(
-			        'limit' => 8,
-			        'order' => array(
-			            'modified' => 'desc'
-				),
-				'conditions' => $condition
-			));
-		$this->Paginator->settings = $paginate;
-		$data = $this->Paginator->paginate('Booklist');
-		$this->set('books', $data);	
+		$conditions = $this->postConditions($this->request->data);
+		$fields = array('DISTINCT title', 'author', 'course', 'school');
+		$data = $this->Booklist->find('all', compact('conditions', 'fields')); 
+		$this->set('books', $data);
 	}
 	
 	public function edit() {
-		if (!$this->request->data ||
-			 isset($this->request->data['Booklist']['find'])) 
-		{
-			$condition = array();
-			
-			if (!isset($this->request->data['Booklist']['grade']) || $this->request->data['Booklist']['grade'] == 'all') {
-				$condition['grade LIKE'] = '%';
-			}else
-				$condition['grade LIKE \'通用\' OR grade LIKE'] = $this->request->data['Booklist']['grade'];
-		
-			if (!isset($this->request->data['Booklist']['school']) || $this->request->data['Booklist']['school'] == 'all') {
-				$condition['school LIKE'] = '%';
-			}else
-				$condition['school LIKE \'通用\' OR school LIKE'] = $this->request->data['Booklist']['school'];
-		
-			if (!isset($this->request->data['Booklist']['semester']) || $this->request->data['Booklist']['semester'] == 'all') {
-				$condition['semester LIKE'] = '%';
-			}else
-				$condition['semester LIKE \'通用\' OR semester LIKE'] = $this->request->data['Booklist']['semester'];
 
-			$paginate = array(
-					'Booklist' => array(
-				        'limit' => 8,
-				        'order' => array(
-				            'modified' => 'desc'
-					),
-					'conditions' => $condition
-				));		
-			$this->Paginator->settings = $paginate;
-			$data = $this->Paginator->paginate('Booklist');
+		if (!$this->request->data || isset($this->request->data['Booklist']['find'])) 
+		{	
+			unset($this->request->data['Booklist']['find']);
+			$limit = '20';
+			$conditions = $this->postConditions($this->request->data);
+			$data = $this->Booklist->find('all', compact('conditions', 'limit')); 
 			$this->set('books', $data);
 		}
 		else {
+
 			if($this->Booklist->save($this->request->data)) {
 		        $this->Session->setFlash(__('已成功编辑 :D'));
 			}

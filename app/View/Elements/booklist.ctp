@@ -1,8 +1,7 @@
 <?php echo $this->Form->create('Booklist'); ?>
 <div class="col-xs-3 col-sm-2 col-sm-offset-2">
 	<select name="data[Booklist][grade]" class="form-control">
-	  <option value="all">年级</option>
-	  <option value="通用">通用</option>
+	  <option value="">年级</option>
 	  <option value="大一">大一</option>
 	  <option value="大二">大二</option>
 	  <option value="大三">大三</option>
@@ -11,8 +10,7 @@
 </div>
 <div class="col-xs-3 col-sm-2">
 	<select name="data[Booklist][school]" class="form-control">
-	  <option value="all">院系</option>
-	  <option value="通用">通用</option>
+	  <option value="">院系</option>
 	  <option value="物院">物院</option>
 	  <option value="化院">化院</option>
 	  <option value="少院">少院</option>
@@ -27,8 +25,7 @@
 </div>
 <div class="col-xs-3 col-sm-2">
 	<select name="data[Booklist][semester]" class="form-control">
-	  <option value="all">学期</option>
-	  <option value="通用">通用</option>
+	  <option value="">学期</option>
 	  <option value="春季学期">春季学期</option>
 	  <option value="秋季学期">秋季学期</option>
 	</select>
