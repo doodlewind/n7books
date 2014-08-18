@@ -58,7 +58,7 @@ echo $this->Form->create('Book');
 						</div>
 						<!--ISBN-->
 						<div class="col-xs-6">
-							<input type="tel" class="form-control" name="data[Book][Isbn]" id="BookIsbn" placeholder="ISBN">
+							<input type="tel" class="form-control" name="data[Book][isbn]" id="BookIsbn" placeholder="ISBN">
 						</div>
 						<!--AJAX简介-->
 						<div id="intro" class="col-xs-12">
