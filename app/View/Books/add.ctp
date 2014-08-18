@@ -6,7 +6,7 @@ echo $this->Form->create('Book');
 	<div class="col-md-8 col-md-offset-2">
 		<div id="myTabContent" class="tab-content">
 			<!--Step 1-->
-			<div class="tab-pane fade col-xs-12 " id="step1">
+			<div class="tab-pane fade col-xs-12 active in" id="step1">
 				  <h4><a>Step 1 - 分类</a></h4><hr>
 				  		<!--书籍/材料-->
 						<div class="col-xs-7">
@@ -41,14 +41,18 @@ echo $this->Form->create('Book');
 		      </div>
 		      <div class="tab-pane fade col-xs-12 " id="step2">
 					<h4><a>Step 2 - 名称</a></h4><hr>
-					
+					<div class="paper">
+						<div class="col-xs-12">
+							<input type="text" class="form-control" name="data[Book][title]" id="paper" placeholder="材料名">
+						</div>
+					</div>
 					<div class="book">
 						<!--常用书名-->
 						<div class="col-xs-12">
 							<h4><small>选择常用书名<br>或输入扉页/条码上的ISBN</small></h4>
 						</div>
 						<div class="col-xs-6">
-							<select class="form-control" name="data[Book][title]" id="RegularTitle">
+							<select class="form-control" id="RegularTitle">
 								<option value="">常用书名</option>
 								<option value="9787312028120">微积分学导论上册</option>
 								<option value="生化">生化</option>
@@ -56,11 +60,14 @@ echo $this->Form->create('Book');
 						</div>
 						<!--ISBN-->
 						<div class="col-xs-6">
-							<input type="tel" class="form-control" id="BookIsbn" placeholder="ISBN">
+							<input type="tel" class="form-control" name="data[Book][Isbn]" id="BookIsbn" placeholder="ISBN">
 						</div>
 						<!--AJAX简介-->
 						<div id="intro" class="col-xs-12">
 							<h5 class="text-right"><bookTitle></bookTitle><bookAuthor></bookAuthor></h5>
+							<input type="hidden" name="data[Book][title]" id="ajaxTitle">
+							<input type="hidden" name="data[Book][author]" id="ajaxAuthor">
+							<input type="hidden" name="data[Book][cover]" id="ajaxCover">
 						</div>
 					</div>
 					<!--下一步-->
@@ -70,7 +77,7 @@ echo $this->Form->create('Book');
 						</p>
 					</div>
 		      </div>
-		      <div class="tab-pane fade col-xs-12 active in" id="step3"><br>
+		      <div class="tab-pane fade col-xs-12 " id="step3"><br>
 				  	<h4><a>Step 3 - 完善</a></h4><hr>
 					<!--成色-->
 					<div class="col-xs-12">
@@ -92,7 +99,7 @@ echo $this->Form->create('Book');
 					</div>
 					<!--评论-->
 					<div class="col-xs-12">
-					    <textarea class="form-control" name="data[Book][comment]"rows="3" placeholder="为了勾搭师弟师妹，就点评几句呗"></textarea>
+					    <textarea class="form-control" name="data[Book][comment]"rows="3" placeholder="为了勾搭师弟师妹，点评几句呗"></textarea>
 					</div>
 					<!--Submit-->
 					<div class="col-xs-12"><br>
@@ -101,6 +108,7 @@ echo $this->Form->create('Book');
 							echo $this->Form->end(array(
 								'label' => '提交',
 								'class' => 'btn btn-primary',
+								'disabled' => 'disabled',
 								'div' => false
 							));
 						?>

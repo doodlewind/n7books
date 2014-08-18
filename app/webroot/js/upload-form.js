@@ -23,12 +23,20 @@ $(document).ready(function(){
 					.done(function(book){
 						$("bookTitle").text(book.title + " - ");
 						$("bookAuthor").text(book.author);
+						
+						$("#ajaxTitle").val(book.title);
+						$("#ajaxAuthor").val(book.author);
+						$("#ajaxCover").val(book.image);
+						
 						$("#intro").append("<image align='right' src='" + book.image + "'>");
 						nextButton.removeAttr("disabled");
 					})
 					.fail(function(){
 		            	$("bookTitle").text("ISBN 有误");
 		            	$("bookAuthor").text("");
+						$("#ajaxTitle").val("");
+						$("#ajaxAuthor").val("");
+						$("#ajaxCover").val("");
 					})
 					.always(function(){
 						$("#intro").show();
@@ -39,8 +47,6 @@ $(document).ready(function(){
 			regularTitle.removeAttr("disabled");	
 		}
 	}
-	
-	$("#button1").attr("disabled", "true");
 	
 	$('#step1 :input').change(function(){
 		var type = $("input[name='data[Book][type]']:checked");
@@ -114,6 +120,15 @@ $(document).ready(function(){
 		$("#intro").hide();
 	});
 	
+	$("#paper").on('input', function(){		
+		if ($(this).val().length > 0) {
+			$("#button2").removeAttr("disabled");
+		}
+		else {
+			$("#button2").attr("disabled", "true");
+		}
+	})
+	
 	$("#RegularTitle").change(function(){
 		//alert("onChange");
 		$('#BookIsbn').val($(this).val());
@@ -131,6 +146,18 @@ $(document).ready(function(){
 		//alert("onInput");
 		setButton2();
 	})
-
-
+	
+	$("input[name='data[Book][price]']").on('input', function(){
+		var submit = $('input[type=submit]');
+		if ($(this).val() == '') {
+			submit.attr('disabled', 'true');
+		}
+		else if ( 0 <= $(this).val() && $(this).val() <= 100 ) {
+			submit.removeAttr('disabled');
+		}
+		else {
+			submit.attr('disabled', 'true');
+		}
+		
+	})
 })
