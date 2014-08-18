@@ -49,13 +49,11 @@ echo $this->Form->create('Book');
 					<div class="book">
 						<!--常用书名-->
 						<div class="col-xs-12">
-							<h4><small>选择常用书名<br>或输入扉页/条码上的ISBN</small></h4>
+							<h4><small>可从常见书名中选择<br>或输入扉页/条码上的ISBN识别</small></h4>
 						</div>
 						<div class="col-xs-6">
 							<select class="form-control" id="RegularTitle">
 								<option value="">常用书名</option>
-								<option value="9787312028120">微积分学导论上册</option>
-								<option value="生化">生化</option>
 							</select>
 						</div>
 						<!--ISBN-->
