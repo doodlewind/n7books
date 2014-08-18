@@ -8,8 +8,10 @@
 		<?php 
 		echo '书谱'.$title_for_layout; ?>
 	</title>
-
-	<?php echo $this->Html->css('/css/bootstrap.min'); ?>
+	<?php 
+		echo $this->Html->script('/js/jquery-2.0.3.min');
+		echo $this->Html->css('/css/bootstrap.min'); 
+	?>
 	<style type="text/css">
 			body {
 			  padding-top: 70px;
@@ -175,7 +177,6 @@
     </div>
 
 	<?php 
-		echo $this->Html->script('/js/jquery-2.0.3.min');
 		echo $this->Html->script('/js/holder');
 		echo $this->Html->script('/js/mod');
 		echo $this->Html->script('/js/bootstrap.min');

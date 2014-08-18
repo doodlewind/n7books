@@ -220,6 +220,25 @@ class BooksController extends AppController {
 		}
 	}
 	
+	public function upload() {
+		$this->set('title_for_layout', '-传书');
+		if ($this->request->is('post')) {
+			$this->request->data['Book']['user_id'] = $this->Auth->user('id');
+			
+			if ($this->request->data['Book']['type']=='材料'){
+				$this->request->data['Book']['update'] = '0';
+			}else $this->request->data['Book']['update'] = '1';
+			
+			$this->Book->create();
+			
+			if ($this->Book->save($this->request->data)) {
+				$this->Session->setFlash(__('上传已完成'));
+				return $this->redirect(array('action' => 'index'));
+			}
+			$this->Session->setFlash(__('上传失败...'));
+		}
+	}
+	
 	public function edit($id = null) {
 			$this->set('title_for_layout', '-编辑详情');
 			if (!$id) {

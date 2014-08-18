@@ -19,14 +19,14 @@ for ($i = 0; $i < $sum; $i++) {
 			</div>
 			<div class="col-xs-7 col-sm-12 col-md-12">
 				<h3 class="text-left"><small>￥<?php echo $books[$i][0]['min'];?>起 <span class="label label-default"><?php echo $books[$i][0]['count'];?>本</span></small></h3>
-				<h5 class="text-right"><?php 
+				<h4 class="text-right"><?php 
 					echo $this->Html->link( $books[$i]['Book']['title'],array(
 						'controller' => 'books',
 						'action' => 'view',$books[$i]['Book']['title'],
 						),
 						array('target'=>'_blank')
 					);
-					?></h5>
+					?></h4>
 				<h6  class="text-right">
 					<?php echo '"'.$books[$i]['Book']['comment'].'"';?>
 				</h6>

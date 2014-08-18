@@ -58,9 +58,9 @@
 	<div class="col-xs-6 col-md-3">
 		<div class="btn-group" data-toggle="buttons">
 			<label class="btn btn-default">
-				<input type="radio" name="data[Book][fineness]" value="崭新">崭新</label>
-				<label class="btn btn-default active"><input type="radio" name="data[Book][fineness]" value="刷过" checked="">刷过</label>
-				<label class="btn btn-default"><input type="radio" name="data[Book][fineness]"value="刷残">刷残</label>
+			<input type="radio" name="data[Book][fineness]" value="崭新">崭新</label>
+			<label class="btn btn-default active"><input type="radio" name="data[Book][fineness]" value="刷过" checked="">刷过</label>
+			<label class="btn btn-default"><input type="radio" name="data[Book][fineness]"value="刷残">刷残</label>
 		</div>
 	</div>
 </div>
@@ -80,7 +80,7 @@
 			       <div class="input-group-addon">￥</div>
 			       <input class="form-control" name="data[Book][price]"  placeholder="0-100 整数">
 			     </div>
-			   </div>
+			 </div>
 
 	</div>
 	<div class="col-md-7 col-md-offset-3">
