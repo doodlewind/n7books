@@ -5,30 +5,36 @@
 	echo $this->Form->input('on_shelf', array('type' => 'hidden'));
 	echo $this->Form->input('cover', array('type' => 'hidden'));
 ?>
-<div class="row">
-  <div class="col-md-4 col-md-offset-3">
-		<h3>编辑详情</h3>
-	</div>
-	<div class="col-md-7 col-md-offset-3">
+
+  <div class="col-xs-12">
+		<h3><a>编辑详情</a></h3>
 	<hr>
 	</div>
-</div>
-<div class="row">
-  <div class="col-md-4 col-md-offset-3">
+
+  <div class="col-xs-6">
 		<?php echo $this->Form->input('title',
 						array('label' => '书 / 材料名', 'class' => 'form-control' )); ?>
-	<span class="help-block">尽量准确地输入书 / 材料名</span>
   </div>
-  <div class="col-md-3">
+  <div class="col-xs-6">
 			<?php 
 				echo $this->Form->input('author',
 					array('label' => '作者', 'class' => 'form-control', 'placeholder' => ''));
 			?>
-		<span class="help-block">思修 / GT宝书 / 吉米多维奇等名著作者可不填</span>
 	</div>
-</div>
-<div class="row">
-	<div class="col-xs-12 col-md-offset-3">
+
+	<div class="col-xs-12">
+		<select class="form-control" name="data[Book][category]" id="UserSchoool">
+			<option value="物院">物院</option>
+			<option value="化院">化院</option>
+			<option value="少院">少院</option>
+			<option value="数院">数院</option>
+			<option value="生院">生院</option>
+			<option value="信院">信院</option>
+			<option value="计院">计院</option>
+			<option value="核院">核院</option>
+			<option value="工院">工院</option>
+			<option value="管院">管院</option>
+		</select>
 		<div class="btn-group" data-toggle="buttons">
 			<?php
 				$categories = array('数理','生化','信息','工程','外语','社科','杂家');
@@ -52,10 +58,8 @@
 				echo $select;
 			?>
 		</div>
-	</div>
 </div>
 <br>
-<div class="row">
 	<div class="col-xs-6 col-md-4 col-md-offset-3">
 		<div class="btn-group" data-toggle="buttons">	
 			<?php
@@ -83,7 +87,6 @@
 	</div>
 	<div class="col-xs-6 col-md-3">
 		<div class="btn-group" data-toggle="buttons">
-			
 			<?php
 				$types = array('崭新','刷过','刷残');
 				$select = '';
@@ -108,17 +111,9 @@
 		</div>
 	</div>
 </div>
-<div class="row">
 	<div class="col-xs-6 col-md-3 col-xs-offset-3 col-md-offset-3">
 		<br><br>
-   
-	 <div class="checkbox">
-	   <label>
-	     <input name="data[Book][update]" id="BookUpdate" type="checkbox" value="1" checked> 封面
-	   </label>
-	 </div>
-	 
-	 
+
 	</div>
   <div class="col-xs-6 col-md-3 col-xs-offset-1">
 <br><br>

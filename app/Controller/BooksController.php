@@ -24,16 +24,12 @@ class BooksController extends AppController {
 		),
 		'group' => 'Book.title'
 	));
-
-	public function demo() {
-		return;
-	}
-
+	
 	public function index() {
 		$this->set('title_for_layout', '-主页');
 		$paginate = array(
 				'Book' => array(
-			        'limit' => 8,
+			        'limit' => 12,
 			        'order' => array(
 			            'Book.modified' => 'desc'
 				),
@@ -65,7 +61,7 @@ class BooksController extends AppController {
 		}
 		$paginate = array(
 				'Book' => array(
-			        'limit' => 8,
+			        'limit' => 12,
 			        'order' => array(
 			            'Book.modified' => 'desc'
 				),
@@ -240,10 +236,10 @@ class BooksController extends AppController {
 	}
 	
 	public function edit($id = null) {
-			$this->set('title_for_layout', '-编辑详情');
-			if (!$id) {
-				throw new NotFoundException(__('Invalid Book'));
-			}
+		$this->set('title_for_layout', '-编辑详情');
+		if (!$id) {
+			throw new NotFoundException(__('Invalid Book'));
+		}
 			
     	$book = $this->Book->findById($id);
 			//已成交书籍不能编辑
@@ -252,10 +248,10 @@ class BooksController extends AppController {
 	    }
 
 	    if ($this->request->is(array('post', 'put'))) {
-					
-					if ($this->request->data['Book']['type']=='材料') {
-						$this->request->data['Book']['update'] = '0';
-					}
+		
+			if ($this->request->data['Book']['type']=='材料') {
+				$this->request->data['Book']['update'] = '0';
+			}
 					
 	        if ($this->Book->save($this->request->data)) {
 	            $this->Session->setFlash(__('编辑已保存'));
@@ -288,13 +284,6 @@ class BooksController extends AppController {
 	    if ($this->action === 'add') {
 	        return true;
 	    }
-		/*
-	    // The owner of a post can edit and delete it
-	    if (in_array($this->action, array('edit', 'delete'))) {
-	        $bookId = (int) $this->request->params['pass']['id'];
-			if ($this->Book->isOwnedBy($bookId, $user['id'])) return true;
-	    }
-		*/
 	    return parent::isAuthorized($user);
 	}
 

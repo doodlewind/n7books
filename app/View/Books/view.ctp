@@ -1,4 +1,4 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-xs-12">
 
 	<a  data-toggle="modal" data-target=".bs-example-modal-sm">如何购买？</a><br><br>
 
