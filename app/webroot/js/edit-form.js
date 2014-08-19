@@ -9,7 +9,12 @@ $(document).ready(function(){
 		if ($(this).val() == $("#bookFineness").val()) {
 			$(this).attr("selected", "true");
 		}
-		
+		if ($(this).val() == $("#userSchool").val()) {
+			$(this).attr("selected", "true");
+		}
+		if ($(this).val() == $("#userCampus").val()) {
+			$(this).attr("selected", "true");
+		}
 	});
 	
 });

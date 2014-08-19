@@ -30,7 +30,7 @@
 	</div>
 	<!--分类-->
 	<div class="col-xs-4"><br>
-			<select class="form-control" name="data[Book][category]" id="UserSchoool">
+			<select class="form-control" name="data[Book][category]" id="BookCategory">
 				<option value="生化">生化</option>
 				<option value="数理">数理</option>
 				<option value="信息">信息</option>

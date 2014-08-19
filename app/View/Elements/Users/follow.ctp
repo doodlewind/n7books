@@ -36,10 +36,10 @@ echo $this->Form->input('user_id', array(
 	'value' => $user['User']['id']
 ));
 ?>
-	<div class="col-xs-4">
+	<div class="col-xs-8">
 		<input type="text" class="form-control" name="data[Follow][keyword]" placeholder="Keyword">
 	</div>
-	<div class="col-xs-2">
+	<div class="col-xs-4">
 		<?php 
 		echo $this->Form->end(
 			array(
