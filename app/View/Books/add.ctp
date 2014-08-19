@@ -6,7 +6,7 @@ echo $this->Form->create('Book');
 			<!--Step 1-->
 			<div class="tab-pane fade col-xs-12 active in" id="step1">
 				  <h4><a>Step 1 - 分类</a></h4><hr>
-				  		<!--书籍/材料-->
+			  		<!--书籍/材料-->
 						<div class="col-xs-7">
 							<div class="btn-group" data-toggle="buttons">
 								<label class="btn btn-default">
@@ -17,7 +17,7 @@ echo $this->Form->create('Book');
 								</label>
 							</div>
 						</div>
-					  	<!--分类-->
+				  	<!--分类-->
 						<div class="col-xs-5">
 							<select class="form-control" name="data[Book][category]" id="BookCategory">
 								<option value="">分类</option>

@@ -1,14 +1,20 @@
 <!--查找begin-->
+<?php echo $this->Html->script('/js/booklists'); ?>
 <h3><a>书单查询</a><small> - 看看你的专业书单？</small></h3>
 <hr>
 <?php
-echo $this->element('booklist');
-echo $this->Html->css('booklist');
-
+echo $this->element('booklists');
+echo $this->Html->css('booklists');
 ?>
 
 <?php 
 if (isset($books)) {
+?>
+
+<?php
+	echo '<input id="querySchool" value= "'.$books[0]['Booklist']['school'].'" type="hidden">';
+	echo '<input id="queryGrade" value= "'.$books[0]['Booklist']['grade'].'" type="hidden">';
+	echo '<input id="querySemester" value= "'.$books[0]['Booklist']['semester'].'" type="hidden">';
 ?>
 	  <table class="table table-hover">
 			<tbody>

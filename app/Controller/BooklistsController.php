@@ -15,7 +15,7 @@ class BooklistsController extends AppController {
 			}else return;
 			$recommands = $this->Booklist->find('all', array(
 				'conditions' => $conditions,
-				'fields' => array('DISTINCT title', 'author', 'course', 'school'),
+				'fields' => array('DISTINCT title', 'author', 'course', 'school', 'grade', 'semester'),
 				'order' => 'rand()'
 			));
 			$this->set('recommands', $recommands);
@@ -24,7 +24,7 @@ class BooklistsController extends AppController {
 		}
 		
 		$conditions = $this->postConditions($this->request->data);
-		$fields = array('DISTINCT title', 'author', 'course', 'school');
+		$fields = array('DISTINCT title', 'author', 'course', 'school', 'grade', 'semester');
 		$data = $this->Booklist->find('all', compact('conditions', 'fields')); 
 		$this->set('books', $data);
 		
