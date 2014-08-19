@@ -19,10 +19,10 @@
 			}
 			body {
 			  padding-top: 70px;
-				background: url(/img/bookface-bg.png) repeat 0 0;
+				background: url(/img/bookface-bg.jpg) repeat 0 0;
 			}
 			.jumbotron {
-				background: url(/img/bookface.png) repeat 0 0;
+				background: url(/img/bookface.jpg) repeat 0 0;
 		    -moz-box-shadow: 0 5px 3px rgba(32, 32, 32, .08);
 		    -webkit-box-shadow: 0 5px 3px rgba(32, 32, 32, .08);
 		    box-shadow: 0 5px 5px rgba(32, 32, 32, .28);
