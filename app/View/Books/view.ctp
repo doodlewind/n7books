@@ -26,17 +26,8 @@
 			<?php echo $item['Book']['title'].' - '.$item['Book']['author']; ?>
 		</div>
 		<div class="panel-body">
-			<div class="col-xs-12 col-sm-5"><br>
-				<div class="thumbnail">
-					<?php
-					if ($item['Book']['cover']) {
-						echo '<img src="'.$item['Book']['cover'].'">';
-					}else
-						echo '<img data-src="holder.js/80x100/text:'.$item['Book']['title'].'">';
-					?>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-7 ">
+			
+			<div class="col-xs-6">
 				<br>
 				<table class="table table-condensed">
 					<tbody>
@@ -86,6 +77,16 @@
 						</tr>
 					</tbody>
 				</table>
+			</div>
+			<div class="col-xs-6"><br>
+				<div class="thumbnail">
+					<?php
+					if ($item['Book']['cover']) {
+						echo '<img src="'.$item['Book']['cover'].'">';
+					}else
+						echo '<img data-src="holder.js/100x150/sky/auto/text:'.$item['Book']['title'].'">';
+					?>
+				</div>
 			</div>
 	  </div>
 	</div>
