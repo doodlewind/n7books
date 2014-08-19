@@ -154,7 +154,7 @@
 	</div>
 	<div id="container">
 		<div id="row">
-			<div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2">
+			<div class="col-sm-8 col-xs-12 col-sm-offset-2">
 				<?php echo $this->Session->flash('flash', array(
 						'element' => 'failure'
 						));

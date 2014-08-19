@@ -3,10 +3,9 @@
 							  <thead>
 									<tr>
 										<th>标题</th>
-										<th>作者</th>
 										<th>定价</th>
-										<th>状态</th>
 										<th>操作</th>
+										<th></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -51,10 +50,9 @@ foreach ($user['Book'] as $book) {
 
 		$str = '<tr>';
 		$str.= '<td>'.$book['title'].'</td>';
-		$str.= '<td>'.$book['author'].'</td>';
 		$str.= '<td><a><b>'.'￥'.$book['price'].'</a></b></td>';
-		$str.= '<td>'.$book['on_shelf'].'</td>';
-		$str.= '<td><div class="btn-group">'.$edit_button.'&nbsp;'.$state_button.'</div></td>';
+		$str.= '<td>'.$edit_button.'</td>';
+		$str.= '<td>'.$state_button.'</td>';
 		$str.= '</tr>';
 		echo $str;
 }

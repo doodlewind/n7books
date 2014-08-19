@@ -1,5 +1,4 @@
 <?php echo $this->Form->create('User'); ?>
-<div class="row">
   <div class="col-sm-8 col-sm-offset-2">
 		<h3><a>欢迎光临南七书谱</a><br><small>一分钟的事情</small></h3><hr>
 	</div>

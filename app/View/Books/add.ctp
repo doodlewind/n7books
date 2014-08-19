@@ -2,8 +2,6 @@
 echo $this->Html->script('/js/upload-form');
 echo $this->Form->create('Book'); 
 ?>
-<div class="row">
-	<div class="col-md-8 col-md-offset-2">
 		<div id="myTabContent" class="tab-content">
 			<!--Step 1-->
 			<div class="tab-pane fade col-xs-12 active in" id="step1">
@@ -114,5 +112,3 @@ echo $this->Form->create('Book');
 					</div>
 			  </div>
 		</div>
-	</div>
-</div>
