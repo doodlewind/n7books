@@ -10,7 +10,7 @@
 					if ($item['Book']['cover']) {
 						echo '<img src="'.$item['Book']['cover'].'">';
 					}else
-						echo '<img data-src="holder.js/100x150/text:'.$item['Book']['title'].'">';
+						echo '<img data-src="holder.js/100x150/sky/auto/text:'.$item['Book']['title'].'">';
 					?>
 				</div>
 			</div>
