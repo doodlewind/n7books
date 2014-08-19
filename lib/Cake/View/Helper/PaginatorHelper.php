@@ -720,7 +720,7 @@ class PaginatorHelper extends AppHelper {
 
 		$defaults = array(
 			'tag' => 'span', 'before' => null, 'after' => null, 'model' => $this->defaultModel(), 'class' => null,
-			'modulus' => '8', 'separator' => ' | ', 'first' => null, 'last' => null, 'ellipsis' => '...',
+			'modulus' => '5', 'separator' => ' | ', 'first' => null, 'last' => null, 'ellipsis' => '...',
 			'currentClass' => 'current', 'currentTag' => null
 		);
 		$options += $defaults;
