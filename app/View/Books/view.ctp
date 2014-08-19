@@ -32,25 +32,25 @@
 				<table class="table table-condensed">
 					<tbody>
 						<tr>
-							<td class="text-right"><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-star"></span></button></td>
+							<td><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-star"></span></button></td>
 							<td>
 								<?php echo $item['Book']['fineness']; ?>
 							</td>
 						</tr>
 						<tr>
-							<td class="text-right"><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-list-alt"></span></button></td>
+							<td><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-list-alt"></span></button></td>
 							<td>
 								<?php echo $item['Book']['type'].' - '.$item['Book']['category']; ?>
 							</td>
 						</tr>
 						<tr>
-							<td class="text-right"><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-tag"></span></button></td>
+							<td><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-tag"></span></button></td>
 							<td><b>
 								<?php echo '￥'.$item['Book']['price']; ?>
 							</b></td>
 						</tr>
 						<tr>
-							<td class="text-right"><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-user"></span></button></td>
+							<td><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-user"></span></button></td>
 							<td>
 								<?php 
 								echo '<a href="/users/view/'.$item['User']['id'].'">'.$item['User']['username'].'</a>'; 
@@ -58,19 +58,19 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="text-right"><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-earphone"></span></button></td>
+							<td><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-earphone"></span></button></td>
 							<td>
 								<?php echo '<img data-src="holder.js/100x25/sky/text:'.$item['User']['mobile'].'">'; ?>
 							</td>
 						</tr>
 						<tr>
-							<td class="text-right"><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-eye-open"></span></button></td>
+							<td><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-eye-open"></span></button></td>
 							<td>
 								<?php echo $item['Book']['visit']; ?>
 							</td>
 						</tr>
 						<tr>
-							<td class="text-right"><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-comment"></span></button></td>
+							<td><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-comment"></span></button></td>
 							<td><small>
 								<?php echo $item['Book']['comment']; ?>
 							</small></td>
