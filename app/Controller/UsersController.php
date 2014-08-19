@@ -23,11 +23,12 @@ class UsersController extends AppController {
 	}
 
 	public function welcome() {
+		$this->set('title_for_layout', '-最快捷安全的校内旧书场');
 		return;
 	}
 	
 	public function login() {
-		$this->set('title_for_layout', '-登陆');
+		$this->set('title_for_layout', '-登入');
 		if ($this->request->is('post')) {
 		    if ($this->Auth->login()) {
 		        return $this->redirect($this->Auth->redirect());
@@ -37,6 +38,7 @@ class UsersController extends AppController {
 	}
 	
 	public function reset() {
+		$this->set('title_for_layout', '-重置密码');
 		if (isset($this->request->data['User']['email'])) {
 			$user = $this->User->findByEmail($this->request->data['User']['email']);
 			if (!isset($user['User']['id'])) {
@@ -101,10 +103,8 @@ class UsersController extends AppController {
 		));
 		$this->Paginator->settings = $paginate;
 		$data = $this->Paginator->paginate('Book');
+		$this->set('title_for_layout', '-'.$user['User']['username']);
 		$this->set('books', $data);
-		
-		
-		
 		
 		if(!isset($user)) {
 			return $this->redirect(array('controller'=>'books', 'action' => 'index'));
@@ -142,6 +142,7 @@ class UsersController extends AppController {
 	
 	public function guide() {
 		$id = $this->Auth->user('id');
+		$this->set('title_for_layout', '-欢迎');
 		if(!$this->request->data){
 			$id = $this->Auth->user('id');
 			$this->set('id', $id);
@@ -161,20 +162,4 @@ class UsersController extends AppController {
 				return $this->redirect(array('controller' => 'books','action' => 'index'));
 		}
 	}
-	/*
-	public function delete($id = null) {
-		$this->request->onlyAllow('post');
-
-		$this->User->id = $id;
-		if (!$this->User->exists()) {
-		    throw new NotFoundException(__('Invalid user'));
-		}
-		if ($this->User->delete()) {
-		    $this->Session->setFlash(__('User deleted'));
-		    return $this->redirect(array('action' => 'index'));
-		}
-		$this->Session->setFlash(__('User was not deleted'));
-		return $this->redirect(array('action' => 'index'));
-	}
-	*/
 }

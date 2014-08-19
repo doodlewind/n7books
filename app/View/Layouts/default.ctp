@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
 	<title>
 		<?php 
-		echo '书谱'.$title_for_layout; ?>
+		echo '南七书谱'.$title_for_layout; ?>
 	</title>
 	<?php 
 		echo $this->Html->script('/js/jquery-2.0.3.min');
@@ -19,10 +19,10 @@
 			}
 			body {
 			  padding-top: 70px;
-				background: url(/img/bookface-bg.jpg) repeat 0 0;
+				background: url(/img/bookface.jpg) repeat 0 0;
 			}
 			.jumbotron {
-				background: url(/img/bookface.jpg) repeat 0 0;
+				background: url(/img/bookface-j.jpg) repeat 0 0;
 		    -moz-box-shadow: 0 5px 3px rgba(32, 32, 32, .08);
 		    -webkit-box-shadow: 0 5px 3px rgba(32, 32, 32, .08);
 		    box-shadow: 0 5px 5px rgba(32, 32, 32, .28);

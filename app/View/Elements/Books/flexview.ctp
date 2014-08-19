@@ -34,11 +34,11 @@ for ($i = 0; $i < $sum; $i++) {
 		</div>	
 	<?php
 	if ($i % 4 == 3 ) {
-		echo '<div class="col-xs-12"><hr></div>
+		echo '<div class="col-xs-12"><br></div>
 		</div>';
 	}
 }
-echo '<div class="col-xs-12 ">&nbsp;&nbsp;&nbsp;&nbsp;<ul class="pagination">';
+echo '<div class="col-xs-12 "><ul class="pagination">';
 echo $this->Paginator->numbers(array(
 	'first' => '<<',
 	'last' => '>>',

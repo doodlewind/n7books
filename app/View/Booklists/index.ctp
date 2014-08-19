@@ -1,5 +1,5 @@
 <!--查找begin-->
-<h3><a>查找</a><small> - 看看你的专业书单？</small></h3>
+<h3><a>书单查询</a><small> - 看看你的专业书单？</small></h3>
 <hr>
 <?php
 echo $this->element('booklist');
