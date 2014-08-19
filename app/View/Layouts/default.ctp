@@ -21,6 +21,7 @@
 			  padding-top: 70px;
 				background: url(/img/bookface.jpg) repeat 0 0;
 			}
+
 			.jumbotron {
 				background: url(/img/bookface-j.jpg) repeat 0 0;
 		    -moz-box-shadow: 0 5px 3px rgba(32, 32, 32, .08);

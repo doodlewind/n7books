@@ -127,8 +127,10 @@ class BooksController extends AppController {
 	
 	public function view($title = null) {
 		$this->set('title_for_layout', '-详情');
-    $this->Session->setFlash(
-        __('<a  data-toggle="modal" data-target=".bs-example-modal-sm">如何购买？</a>'));
+		
+		$resend = 'FAQ: <a class="button" data-toggle="modal" data-target=".bs-example-modal-sm">如何购买？</a>';
+    $this->Session->setFlash($resend);
+		
 		if (!$title){
 	        $this->Session->setFlash(
 	            __('你要的，小书摊没找到 :-('));

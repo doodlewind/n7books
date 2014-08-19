@@ -1,8 +1,5 @@
 <div class="col-xs-12">
-
-	<a  data-toggle="modal" data-target=".bs-example-modal-sm">如何购买？</a><br><br>
-
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;">
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
 
