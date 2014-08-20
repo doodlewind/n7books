@@ -28,13 +28,17 @@
 				
 			}
 			.jumbotron {
-				background: url(/img/bookface-j.jpg) repeat 0 0;
+				background: url(/img/bookface.jpg) repeat 0 0;
+				
+				filter: brightness(90%);
+				-webkit-filter: brightness(90%); 
+				
 		    -moz-box-shadow: 0 5px 3px rgba(32, 32, 32, .08);
 		    -webkit-box-shadow: 0 5px 3px rgba(32, 32, 32, .08);
 		    box-shadow: 0 5px 5px rgba(32, 32, 32, .28);
 			}
 			.thumbnail {
-				filter:alpha(opacity=90);
+				filter:alpha(opacity=80);
 				opacity:0.80;
 				border: 0;
 				margin-bottom: 0;
@@ -42,6 +46,9 @@
 				padding: 0;
 				
 			}
+			img:hover {  
+				-webkit-filter: brightness(120%);
+			}  
 			img {
 			    -moz-box-shadow: 0 3px 3px rgba(32, 32, 32, .08);
 			    -webkit-box-shadow: 0 3px 3px rgba(32, 32, 32, .08);
@@ -168,8 +175,8 @@
 		</div>
 	</div>
 	<div id="container">
-		<div id="row">
-			<div class="col-sm-8 col-xs-12 col-sm-offset-2" >
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2" >
 				<?php echo $this->Session->flash('flash', array(
 						'element' => 'failure'
 						));

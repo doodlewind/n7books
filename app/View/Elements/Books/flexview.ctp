@@ -1,3 +1,4 @@
+<div class="row">
 <?php
 $sum = count($books);
 for ($i = 0; $i < $sum; $i++) {
@@ -53,3 +54,4 @@ echo '</div>';
 
 
 ?>
+</div>

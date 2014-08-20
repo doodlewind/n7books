@@ -16,8 +16,9 @@ if (isset($books)) {
 	echo '<input id="queryGrade" value= "'.$books[0]['Booklist']['grade'].'" type="hidden">';
 	echo '<input id="querySemester" value= "'.$books[0]['Booklist']['semester'].'" type="hidden">';
 ?>
+<div class="col-xs-12 panel panel-default">
 	  <table class="table table-hover">
-			<tbody>
+			<thead>
 				<tr>
 					<td>课程</td>
 					<td>课本</td>
@@ -25,6 +26,9 @@ if (isset($books)) {
 					<td>图书馆</td>
 					<td>书谱</td>
 				</tr>
+			</thead>
+			<tbody>
+				
 <?php
 	foreach ($books as $book){
 		?>
@@ -58,4 +62,5 @@ if (isset($books)) {
 }?>
 			</tbody>
 		</table>
+</div>
 <!--查找end-->
