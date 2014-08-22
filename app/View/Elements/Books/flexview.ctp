@@ -41,8 +41,8 @@ for ($i = 0; $i < $sum; $i++) {
 }
 echo '<div class="col-xs-12 ">&nbsp;&nbsp;&nbsp;&nbsp;<ul class="pagination">';
 echo $this->Paginator->numbers(array(
-	'first' => '<<',
-	'last' => '>>',
+	'first' => '首页',
+	'last' => '末页',
 	'tag' => 'li',
 	'separator' => '',
 	'currentTag' => 'a',
