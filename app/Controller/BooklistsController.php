@@ -37,7 +37,7 @@ class BooklistsController extends AppController {
 		$this->set('title_for_layout', '-书单编辑');
 		
 		$id = $this->Auth->user('id');
-		if($id != 1) {
+		if($id != 2 || $id != 1 ) {
     	$this->Session->setFlash(__('抱歉，书单编辑尚未开放 :-D'));
 			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
 		}
