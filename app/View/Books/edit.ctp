@@ -51,7 +51,7 @@
 	</div>
 	<!--成色-->
 	<div class="col-xs-4"><br>
-			<select class="form-control" name="data[Book][type]" id="UserSchoool">
+			<select class="form-control" name="data[Book][fineness]" id="UserSchoool">
 				<option value="崭新">崭新</option>
 				<option value="刷过">刷过</option>
 				<option value="刷残">刷残</option>
