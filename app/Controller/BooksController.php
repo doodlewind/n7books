@@ -33,7 +33,7 @@ class BooksController extends AppController {
 			        'limit' => 12,
 			        'order' => array(
 								'Book.importance' => 'desc',
-
+		            'Book.modified' => 'desc'
 				),
 				'fields' => array(
 	        'Book.id',
