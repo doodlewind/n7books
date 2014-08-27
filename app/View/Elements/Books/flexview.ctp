@@ -10,11 +10,40 @@ for ($i = 0; $i < $sum; $i++) {
 			<div class="col-xs-4 col-sm-12 col-md-12 ">
 				<div class="thumbnail">
 					<?php
-					echo '<a target="_blank" href="/books/view/'.$books[$i]['Book']['title'].'">';
+					//echo '<a target="_blank" href="/books/view/'.$books[$i]['Book']['title'].'">';
+					//echo '<img src="'.$books[$i]['Book']['cover'].'"></a>';
+					//echo '<img data-src="holder.js/100x150/sky/auto/text:'.h($books[$i]['Book']['title']).'"></a>';
 					if ($books[$i]['Book']['cover']) {
-						echo '<img src="'.$books[$i]['Book']['cover'].'"></a>';
-					}else
-						echo '<img data-src="holder.js/100x150/sky/auto/text:'.$books[$i]['Book']['title'].'"></a>';
+						echo $this->Html->link(
+						    $this->Html->image($books[$i]['Book']['cover'], array('alt' => 'Brownies')),
+						    array(
+									'controller' => 'books',
+									'action' => 'view',$books[$i]['Book']['title'],
+						    ),
+						    array('escapeTitle' => false, 'target' => '_blank')
+						);
+
+					}else {
+						echo $this->Html->link(
+						    $this->Html->image('img.png', array("data-src" => "holder.js/100x150/sky/auto/text:".$books[$i]['Book']['title'],'alt' => 'Brownies')),
+						    array(
+									'controller' => 'books',
+									'action' => 'view',$books[$i]['Book']['title'],
+						    ),
+						    array('escapeTitle' => false, 'target' => '_blank')
+						);
+						/*
+						echo $this->Html->link(
+						    $this->Html->image(array("data-src" => "holder.js/100x150/sky/auto/text:".$books[$i]['Book']['title'], "alt" => $books[$i]['Book']['title'])),
+						    array(
+						        'target' => '_blank',
+						        'action' => 'view'.$books[$i]['Book']['title'],
+						    )
+						);
+						*/
+					}
+						
+						
 					?>
 				</div>
 			</div>
