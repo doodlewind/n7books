@@ -8,6 +8,7 @@ class BooksController extends AppController {
 		'Book' => array(
 	        'limit' => 8,
 	        'order' => array(
+							'Book.importance' => 'desc',
 	            'Book.modified' => 'desc'
 		),
 		'fields' => array(
@@ -31,10 +32,11 @@ class BooksController extends AppController {
 				'Book' => array(
 			        'limit' => 12,
 			        'order' => array(
-			            'Book.modified' => 'desc'
+								'Book.importance' => 'desc',
+		            'Book.modified' => 'desc'
 				),
 				'fields' => array(
-			        'Book.id',
+	        'Book.id',
 					'Book.title',
 					'Book.author',
 					'Book.comment',
