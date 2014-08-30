@@ -49,9 +49,9 @@ for ($i = 0; $i < $sum; $i++) {
 						array('target'=>'_blank')
 					);
 					?></h5>
-				<h6  class="text-right">
+				<h5 class="text-right"><small>
 					<?php echo '"'.$books[$i]['Book']['comment'].'"';?>
-				</h6>
+					<small></h5>
 			</div>
 		</div>	
 	<?php
