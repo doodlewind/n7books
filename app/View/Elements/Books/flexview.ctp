@@ -1,3 +1,4 @@
+<?php echo $this->Html->script('/js/flexview'); ?>
 <div class="row">
 <?php
 $sum = count($books);
@@ -32,15 +33,6 @@ for ($i = 0; $i < $sum; $i++) {
 						    ),
 						    array('escapeTitle' => false, 'target' => '_blank')
 						);
-						/*
-						echo $this->Html->link(
-						    $this->Html->image(array("data-src" => "holder.js/100x150/sky/auto/text:".$books[$i]['Book']['title'], "alt" => $books[$i]['Book']['title'])),
-						    array(
-						        'target' => '_blank',
-						        'action' => 'view'.$books[$i]['Book']['title'],
-						    )
-						);
-						*/
 					}
 						
 						
@@ -48,7 +40,7 @@ for ($i = 0; $i < $sum; $i++) {
 				</div>
 			</div>
 			<div class="col-xs-8 col-sm-12 col-md-12 tb">
-				<h3 class="text-left"><small>￥<?php echo $books[$i][0]['min'];?>起 <span class="label label-default"><?php echo $books[$i][0]['count'];?>本</span></small></h3>
+				<h3 class="text-left"><small><del>￥<?php echo $books[$i]['Book']['list_price'];?></del><price>￥<?php echo $books[$i][0]['min'];?>起</price>&nbsp;<span class="label label-default"><?php echo $books[$i][0]['count'];?>本</span></small></h3>
 				<h5 class="text-right"><?php 
 					echo $this->Html->link( $books[$i]['Book']['title'],array(
 						'controller' => 'books',

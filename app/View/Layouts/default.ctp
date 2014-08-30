@@ -44,7 +44,12 @@
 				margin-bottom: 0;
 				margin-top: 10px;
 				padding: 0;
-				
+			}
+			del {
+				font-size: 90%;
+			}
+			price {
+				color: #b12704;
 			}
 			img:hover {  
 				-webkit-filter: brightness(120%);

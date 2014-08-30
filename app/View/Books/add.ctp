@@ -7,6 +7,9 @@ echo $this->Form->create('Book');
 			<div class="tab-pane fade col-xs-12 active in" id="step1">
 				  <h4><a>Step 1 - 分类</a></h4><hr>
 			  		<!--书籍/材料-->
+						<div class="col-xs-12">
+							<h4><small>请选择待传书籍 / 材料的种类</small></h4>
+						</div>
 						<div class="col-xs-7">
 							<div class="btn-group" data-toggle="buttons">
 								<label class="btn btn-default">
@@ -41,13 +44,16 @@ echo $this->Form->create('Book');
 					<h4><a>Step 2 - 名称</a></h4><hr>
 					<div class="paper">
 						<div class="col-xs-12">
+							<h4><small>请输入材料名称</small></h4>
+						</div>
+						<div class="col-xs-12">
 							<input type="text" class="form-control" name="data[Book][title]" id="paper" placeholder="材料名">
 						</div>
 					</div>
 					<div class="book">
 						<!--常用书名-->
 						<div class="col-xs-12">
-							<h4><small>可从常见书名中选择<br>或输入扉页/条码上的ISBN识别</small></h4>
+							<h4><small>可从常见书名中选择<br>或输入扉页/条码上的ISBN识别，格式为13位纯数字</small></h4>
 						</div>
 						<div class="col-xs-6">
 							<select class="form-control" id="RegularTitle">
@@ -64,6 +70,7 @@ echo $this->Form->create('Book');
 							<input type="hidden" name="data[Book][title]" id="ajaxTitle">
 							<input type="hidden" name="data[Book][author]" id="ajaxAuthor">
 							<input type="hidden" name="data[Book][cover]" id="ajaxCover">
+							<input type="hidden" name="data[Book][list_price]" id="ajaxListPrice">
 						</div>
 					</div>
 					<!--下一步-->
@@ -74,7 +81,7 @@ echo $this->Form->create('Book');
 					</div>
 		      </div>
 		      <div class="tab-pane fade col-xs-12 " id="step3"><br>
-				  	<h4><a>Step 3 - 完善</a></h4><hr>
+				  	<h4><a>Step 3 - 完成</a></h4><hr>
 					<!--成色-->
 					<div class="col-xs-12">
 						<div class="btn-group" data-toggle="buttons">

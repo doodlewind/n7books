@@ -17,6 +17,7 @@ class BooksController extends AppController {
 			'Book.author',
 			'Book.comment',
 			'Book.cover',
+			'Book.list_price',
 	        'MIN(Book.price) AS min',
 			'COUNT(Book.title) AS count'
 		),
@@ -41,6 +42,7 @@ class BooksController extends AppController {
 					'Book.author',
 					'Book.comment',
 					'Book.cover',
+					'Book.list_price',
 			        'MIN(Book.price) AS min',
 					'COUNT(Book.title) AS count'
 				),
@@ -73,6 +75,7 @@ class BooksController extends AppController {
 					'Book.author',
 					'Book.comment',
 					'Book.cover',
+					'Book.list_price',
 			        'MIN(Book.price) AS min',
 					'COUNT(Book.title) AS count'
 				),
@@ -108,6 +111,7 @@ class BooksController extends AppController {
 					'Book.author',
 					'Book.comment',
 					'Book.cover',
+					'Book.list_price',
 			        'MIN(Book.price) AS min',
 					'COUNT(Book.title) AS count'
 				),
@@ -204,7 +208,7 @@ class BooksController extends AppController {
 	
 	public function add() {
 		$this->set('title_for_layout', '-传书');
-		$this->Session->setFlash(__('简单三步，即可发布'));
+		$this->Session->setFlash(__('只需简单三步，即可完成上传'));
 		if ($this->request->is('post')) {
 			$this->request->data['Book']['user_id'] = $this->Auth->user('id');
 			

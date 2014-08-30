@@ -22,11 +22,12 @@ $(document).ready(function(){
 				$.getJSON(url)
 					.done(function(book){
 						$("bookTitle").text(book.title + " - ");
-						$("bookAuthor").text(book.author);
+						$("bookAuthor").text(book.author + " " + book.price);
 						
 						$("#ajaxTitle").val(book.title);
 						$("#ajaxAuthor").val(book.author);
 						$("#ajaxCover").val(book.image);
+						$("#ajaxListPrice").val(parseInt(book.price));
 						
 						$("#intro").append("<image align='right' src='" + book.image + "'>");
 						nextButton.removeAttr("disabled");
@@ -37,6 +38,7 @@ $(document).ready(function(){
 						$("#ajaxTitle").val("");
 						$("#ajaxAuthor").val("");
 						$("#ajaxCover").val("");
+						$("#ajaxListPrice").val("");
 					})
 					.always(function(){
 						$("#intro").show();
