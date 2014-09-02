@@ -143,6 +143,12 @@ class BooksController extends AppController {
 			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
 		}
 		$books = $this->Book->findAllByTitle($title);
+		
+		if (!$this->Auth->user('id')){
+			for ($i = 0; $i < count($books); $i++) {
+				$books[$i]['User']['mobile'] = '登入后可见';
+			}
+		}
 		if (!$books) {
 	        $this->Session->setFlash(
 	            __('你要的，小书摊没找到 :-('));

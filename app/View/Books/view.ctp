@@ -50,7 +50,7 @@
 							<td><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-user"></span></button></td>
 							<td>
 								<?php 
-								echo '<a href="/users/view/'.$item['User']['id'].'">'.$item['User']['username'].'</a>'; 
+								echo '<a href="/users/view/'.$item['User']['id'].'">'.$item['User']['username'].'</a>'.' - '.$item['User']['campus']; 
 								?>
 							</td>
 						</tr>

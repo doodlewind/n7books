@@ -98,7 +98,8 @@ class UsersController extends AppController {
 					'Book.on_shelf',
 				),
 				'conditions' => array(
-			        'Book.user_id' => $id
+			        'Book.user_id' => $id,
+							'Book.on_shelf' => '在售'
 				)
 		));
 		$this->Paginator->settings = $paginate;

@@ -5,7 +5,7 @@ $(document).ready(function(){
 		}
 	})
 	$("price").each(function(){
-		if ($(this).text() == '￥0起' || $(this).text() == '￥起') {
+		if ($(this).text() == '￥起') {
 			$(this).text('暂无售价');
 		}
 	})
