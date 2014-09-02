@@ -84,7 +84,7 @@
 					<span class="glyphicon glyphicon-user"></span>
 				</a>
 				<li class="visible-xs navbar-brand dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list"></span><span class="caret"></span></a>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-th-list"></span><span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<li>
 							<a href="/booklists"><b>书单</b><span class="glyphicon glyphicon-star"></a>
