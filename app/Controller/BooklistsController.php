@@ -38,6 +38,11 @@ class BooklistsController extends AppController {
 		
 		$id = $this->Auth->user('id');
 		
+		if (!$id || $id == '1') {
+			$this->Session->setFlash(__('Permission Denied :D'));
+			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
+		}
+		
 		if (!$this->request->data || isset($this->request->data['Booklist']['find'])) 
 		{	
 			unset($this->request->data['Booklist']['find']);
