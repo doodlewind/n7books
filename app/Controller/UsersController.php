@@ -124,7 +124,7 @@ class UsersController extends AppController {
 	        	return $this->redirect(array('controller'=>'users', 'action' => 'guide'));
 	    	}
 	    	$this->Session->setFlash(
-	        	__('更改无法保存...请重试')
+	        	__('抱歉，您的身份信息格式有误，无法注册呢')
 	    	);
 		}
 	}

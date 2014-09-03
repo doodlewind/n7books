@@ -23,14 +23,12 @@ class User extends AppModel {
 	    );
 
   public $validate = array(
-		/*
          'email' => array(
              'required' => array(
                  'rule'    => array('email', true),
                  'message' => '亲爱的学霸，email 是必填的...'
              )
          ),
-		*/
          'password' => array(
              'required' => array(
                  'rule' => array('minLength', '6'),

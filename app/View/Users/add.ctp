@@ -1,3 +1,4 @@
+<?php echo $this->Html->script('/js/user-add'); ?>
 <?php echo $this->Form->create('User'); ?>
   <div class="col-sm-8 col-sm-offset-2">
 		<h3><a>欢迎光临南七书谱</a><br><small>一分钟的事情</small></h3><hr>
@@ -42,10 +43,12 @@
 					array('label' => '注册',
 						'class' => 'btn btn-primary',
 						'before' => '<br>',
+						'disabled' => 'true',
+						'id' => 'UserSubmit',
 						'div' => false
 					) );?>
 					 &nbsp;&nbsp;<label class="checkbox-inline"><small>
-					   <input type="checkbox" id="inlineCheckbox1" value="option1" checked>同意<a data-toggle="modal" data-target=".bs-example-modal-sm">用户协议</a>
+					   <input type="checkbox" id="agree" value="true">同意<a data-toggle="modal" data-target=".bs-example-modal-sm">用户协议</a>
 					 </label></small>
 					 	<br><br>
 					<!--/.modal-->	
