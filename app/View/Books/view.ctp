@@ -3,6 +3,9 @@
 echo "<script type='text/javascript'>
 				function shareClick() {
 					var rrShareParam = {
+						resourceUrl : '',
+						srcUrl : '',
+						pic : '',
 						title : '".$books[0]['Book']['title']."',
 						description : '".$books[0]['Book']['comment']."'
 					};
