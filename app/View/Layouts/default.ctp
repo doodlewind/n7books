@@ -9,7 +9,6 @@
 		<link rel="apple-touch-icon" sizes="76x76" href="/img/touch-icon-ipad.png">
 		<link rel="apple-touch-icon" sizes="120x120" href="/img/touch-icon-iphone-retina.png">
 		<link rel="apple-touch-icon" sizes="152x152" href="/img/touch-icon-ipad-retina.png">
-		<meta name="apple-mobile-web-app-capable" content="yes">
 		<?php
 			echo $this->Html->meta(
 			    'favicon.ico',
