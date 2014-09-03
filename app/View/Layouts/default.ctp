@@ -39,14 +39,12 @@
 		    margin: 0px; 
 				
 			}
-			.xn_share_button_small {
-				background-image: none !important;
-			}
 			.jumbotron {
 				background: url(/img/bookface.jpg) repeat 0 0;
 				
 				filter: brightness(90%);
-				-webkit-filter: brightness(90%); 
+				-webkit-filter: brightness(90%);
+				-moz-filter: brightness(90%); 
 				
 		    -moz-box-shadow: 0 5px 3px rgba(32, 32, 32, .08);
 		    -webkit-box-shadow: 0 5px 3px rgba(32, 32, 32, .08);
