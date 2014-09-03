@@ -54,6 +54,9 @@ class BooksController extends AppController {
 		$this->Paginator->settings = $paginate;
 		$data = $this->Paginator->paginate('Book');
 		$this->set('books', $data);
+		if (!$this->Auth->user('username')) {			
+			$this->set('tips', '您正使用手机，不妨添加南七书谱到主屏幕吧~');
+		}else $this->set('tips', 'Welcome back, dear '.$this->Auth->user('username').'大神');
 	}
 	
 	public function category($category = null) {

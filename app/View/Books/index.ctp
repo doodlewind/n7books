@@ -23,3 +23,4 @@
 </div>
 -->
 <?php echo $this->element('Books/flexview');?>
+<div class="col-xs-12 visible-xs"><br><h5 class="text-center"><a><?php echo $tips;?></a></h5></div>

@@ -1,3 +1,14 @@
+<?php 
+echo $this->Html->script('/js/rrshare');
+echo "<script type='text/javascript'>
+				function shareClick() {
+					var rrShareParam = {
+						title : '".$books[0]['Book']['title']."',
+						description : '".$books[0]['Book']['comment']."'
+					};
+					rrShareOnclick(rrShareParam);
+				}</script>";
+?>
 <div class="col-xs-12">
 	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-sm">
@@ -71,6 +82,12 @@
 							<td><small>
 								<?php echo $item['Book']['comment']; ?>
 							</small></td>
+						</tr>
+						<tr>
+							<td><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-share-alt"></span></button></td>
+							<td>
+								<a name="xn_share" onclick="shareClick()" role="button" class="btn btn-info btn-xs" href="javascript:;"><span>人人</span></a>
+							</td>
 						</tr>
 					</tbody>
 				</table>

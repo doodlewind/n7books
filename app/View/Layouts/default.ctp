@@ -5,6 +5,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
 		<meta name="baidu-site-verification" content="MRd109oCDv" />
+		<link rel="apple-touch-icon" href="/img/touch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/img/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/img/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/img/touch-icon-ipad-retina.png">
+		<meta name="apple-mobile-web-app-capable" content="yes">
 		<?php
 			echo $this->Html->meta(
 			    'favicon.ico',
@@ -33,6 +38,9 @@
 		    border: 0px;
 		    margin: 0px; 
 				
+			}
+			.xn_share_button_small {
+				background-image: none !important;
 			}
 			.jumbotron {
 				background: url(/img/bookface.jpg) repeat 0 0;
@@ -203,7 +211,8 @@
 	</div>
 	<div id="footer">
       <div class="container col-xs-12">
-        <br><br><br><p class="text-center">
+        <br><br>
+					<p class="text-center">
 			<small>2014 南七书谱 - ackn. <a href="https://freeshell.ustc.edu.cn">Freeshell</a> 
 				| <a href="http://glyphicons.com">glyphicons</a>
 				| <a href="http://cakephp.org">cakePHP</a>

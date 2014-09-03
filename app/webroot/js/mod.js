@@ -5,4 +5,7 @@ $(document).ready(function(){
 			$(this).removeAttr("alt");
 		})
 	},0);
+	
+	
+	
 });
