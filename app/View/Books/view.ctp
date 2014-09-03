@@ -1,5 +1,5 @@
+<script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>
 <?php 
-echo $this->Html->script('/js/rrshare');
 echo "<script type='text/javascript'>
 				function shareClick() {
 					var rrShareParam = {
@@ -86,7 +86,7 @@ echo "<script type='text/javascript'>
 						<tr>
 							<td><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-share-alt"></span></button></td>
 							<td>
-								<a name="xn_share" onclick="shareClick()" role="button" class="btn btn-info btn-xs" href="javascript:;"><span>人人</span></a>
+								<a name="xn_share" onclick="shareClick()" type="icon" href="javascript:;"></a>
 							</td>
 						</tr>
 					</tbody>
