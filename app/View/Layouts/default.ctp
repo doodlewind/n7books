@@ -181,13 +181,15 @@
 	</div>
 	<div id="container">
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2" >
-				<?php echo $this->Session->flash('flash', array(
-						'element' => 'failure'
-						));
-				?>
-				<?php echo $this->fetch('content'); ?>
-				<?php //echo $this->element('sql_dump'); ?>
+			<div class="col-xs-12">
+				<div class="col-md-8 col-md-offset-2" >
+					<?php echo $this->Session->flash('flash', array(
+							'element' => 'failure'
+							));
+					?>
+					<?php echo $this->fetch('content'); ?>
+					<?php //echo $this->element('sql_dump'); ?>
+				</div>
 			</div>
 			
 		</div>
