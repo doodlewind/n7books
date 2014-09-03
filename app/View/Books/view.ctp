@@ -86,12 +86,14 @@ echo "<script type='text/javascript'>
 								<?php echo $item['Book']['comment']; ?>
 							</small></td>
 						</tr>
+						<!--
 						<tr>
 							<td><button type="button" class="btn btn-default btn-xs" disabled="disabled"><span class="glyphicon glyphicon-share-alt"></span></button></td>
 							<td>
 								<a name="xn_share" onclick="shareClick()" type="icon" href="javascript:;"></a>
 							</td>
 						</tr>
+							-->
 					</tbody>
 				</table>
 			</div>
