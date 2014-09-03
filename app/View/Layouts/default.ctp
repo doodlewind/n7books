@@ -72,7 +72,7 @@
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
-					<span class=" glyphicon glyphicon-chevron-down"></span>
+					<span class="glyphicon glyphicon-search"></span>
 				</button> 
 				<a class="navbar-brand" href="/books">
 					<small><span class="glyphicon glyphicon-book"></span> 南七书谱</small>
@@ -123,7 +123,7 @@
 					    <div class="input-group">
 						      <input  name="data[Book][title]" id="BookTitle" type="text" class="form-control"placeholder="">
 						      <span class="input-group-btn">
-						        <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+						        <button class="btn btn-default" type="submit">FIND</button>
 						      </span>
 						    </form>
 					    </div><!-- /input-group -->
