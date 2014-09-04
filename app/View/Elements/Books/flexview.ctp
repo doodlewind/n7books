@@ -13,7 +13,7 @@ for ($i = 0; $i < $sum; $i++) {
 					<?php
 					//echo '<a target="_blank" href="/books/view/'.$books[$i]['Book']['title'].'">';
 					//echo '<img src="'.$books[$i]['Book']['cover'].'"></a>';
-					//echo '<img data-src="holder.js/100x150/sky/auto/text:'.h($books[$i]['Book']['title']).'"></a>';
+					//echo '<img data-src="holder.js/100x150/gray/auto/text:'.h($books[$i]['Book']['title']).'"></a>';
 					if ($books[$i]['Book']['cover']) {
 						echo $this->Html->link(
 						    $this->Html->image($books[$i]['Book']['cover'], array('alt' => 'Brownies')),
@@ -26,7 +26,7 @@ for ($i = 0; $i < $sum; $i++) {
 
 					}else {
 						echo $this->Html->link(
-						    $this->Html->image('img.png', array("data-src" => "holder.js/100x150/sky/auto/text:".$books[$i]['Book']['title'],'alt' => 'Brownies')),
+						    $this->Html->image('img.png', array("data-src" => "holder.js/100x150/gray/auto/text:".$books[$i]['Book']['title'],'alt' => 'Brownies')),
 						    array(
 									'controller' => 'books',
 									'action' => 'view',$books[$i]['Book']['title'],

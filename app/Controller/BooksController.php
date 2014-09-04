@@ -179,6 +179,9 @@ class BooksController extends AppController {
 	            __('你要的，小书摊没找到 :-('));
 			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
 		}
+		if (!$this->Auth->user('id')){
+			$book['User']['mobile'] = '登入后可见';
+		}
 		$this->set('item',$book);
 		$book['Book']['visit'] += 1;
 		$this->Book->save($book);
