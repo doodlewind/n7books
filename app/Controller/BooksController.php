@@ -145,7 +145,11 @@ class BooksController extends AppController {
 	            __('你要的，小书摊没找到 :-('));
 			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
 		}
-		$books = $this->Book->findAllByTitle($title);
+		$books = $this->Book->find('all', array(
+			'conditions' => array(
+				'Book.title' => $title,
+				'Book.on_shelf' => '在售'
+		)));
 		
 		if (!$this->Auth->user('id')){
 			for ($i = 0; $i < count($books); $i++) {
@@ -174,7 +178,7 @@ class BooksController extends AppController {
 			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
 		}
 		$book = $this->Book->findById($id);
-		if (!$book) {
+		if (!$book || $book['Book']['on_shelf']!='在售') {
 	        $this->Session->setFlash(
 	            __('你要的，小书摊没找到 :-('));
 			return $this->redirect(array( 'controller' => 'books', 'action' => 'index'));
