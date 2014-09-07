@@ -31,6 +31,7 @@ class UsersController extends AppController {
 		$this->set('title_for_layout', '-登入');
 		if ($this->request->is('post')) {
 		    if ($this->Auth->login()) {
+						$this->Session->setFlash(__('欢迎回来！为了书谱的整洁，若有售出书籍请尽快将其下架，谢谢！'));
 		        return $this->redirect($this->Auth->redirect());
 		    } else
 		        $this->Session->setFlash(__('不匹配啊...'));
