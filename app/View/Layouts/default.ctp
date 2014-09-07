@@ -134,7 +134,7 @@
 					<div>
 					  <div>
 					    <div class="input-group">
-						      <input  name="data[Book][title]" id="BookTitle" type="text" class="form-control"placeholder="">
+						      <input  name="data[Book][title]" id="BookTitle" type="text" class="form-control"placeholder="搜GRE/微积分/马哲...">
 						      <span class="input-group-btn">
 						        <button class="btn btn-default" type="submit">FIND</button>
 						      </span>
