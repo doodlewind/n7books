@@ -29,6 +29,10 @@
 		echo $this->Html->css('/css/bootstrap.min'); 
 	?>
 	<style type="text/css">
+			html, body {
+			    max-width: 100%;
+			    overflow-x: hidden;
+			}
 			html { 
 				background: transparent;
 			}
