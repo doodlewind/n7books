@@ -1,43 +1,69 @@
-CakePHP
-=======
+## BookFace
 
-[![CakePHP](http://cakephp.org/img/cake-logo.png)](http://www.cakephp.org)
+Bookface is an online textbook plea market for USTCers.
 
-CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC.
-Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
+### Get started
 
-Some Handy Links
-----------------
+#### Get Bookface
 
-[CakePHP](http://www.cakephp.org) - The rapid development PHP framework
+You may get your LAMP environment installed first.
 
-[CookBook](http://book.cakephp.org) - THE CakePHP user documentation; start learning here!
+``` bash
+$ git clone https://github.com/doodlewind/n7books.git
+```
 
-[API](http://api.cakephp.org) - A reference to CakePHP's classes
+And change its file permission.
 
-[Plugins](http://plugins.cakephp.org/) - A repository of extensions to the framework
+``` bash
+$ sudo chmod -R www-data:www-data n7books
+```
 
-[The Bakery](http://bakery.cakephp.org) - Tips, tutorials and articles
+#### Configure MySQL and CakePHP
 
-[Community Center](http://community.cakephp.org) - A source for everything community related
+After downloaded the source code, you can then import the MySQL table structure.
 
-[Training](http://training.cakephp.org) - Join a live session and get skilled with the framework
+``` bash
+$ mysql -u root -p ustc_old_book < n7books/ustc_old_book.sql
+```
 
-[CakeFest](http://cakefest.org) - Don't miss our annual CakePHP conference
+Next step is to configure CakePHP for database. Create `n7books/app/Config/database.php` and config like below:
 
-[Cake Software Foundation](http://cakefoundation.org) - Promoting development related to CakePHP
+``` php
+<?php
+class DATABASE_CONFIG {
+    public $default = array(
+        'datasource' => 'Database/Mysql',
+        'persistent' => false,
+        'host' => '127.0.0.1',
+        'login' => 'your_mysql_username',
+        'password' => 'your_mysql_password',
+        'database' => 'ustc_old_book',
+        'encoding' => 'utf8'
+    );
+}
+```
 
-Get Support!
-------------
+#### Configure Apache
 
-[#cakephp](http://webchat.freenode.net/?channels=#cakephp) on irc.freenode.net - Come chat with us, we have cake
+The configuration of apache server includes setting the document root and enables URL rewrite, you can start from editing the apache config file in `/etc/apache2/sites-enables/000-default.conf`. Below is the example configure marking lines to be edited.
 
-[Google Group](https://groups.google.com/group/cake-php) - Community mailing list and forum
+``` text
+DocumentRoot /path/to/n7books
+<Directory />
+        Options FollowSymLinks
+        AllowOverride All
+</Directory>
+<Directory /path/to/n7books>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+</Directory>
+```
+Then, check if `/etc/apache2/mods-enabled` contails `rewrite.load`. If not, just execute this.
+ 
+``` bash
+$ sudo cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled
+```
 
-[GitHub Issues](https://github.com/cakephp/cakephp/issues) - Got issues? Please tell us!
-
-[Roadmaps](https://github.com/cakephp/cakephp/wiki#roadmaps) - Want to contribute? Get involved!
-
-[![Bake Status](https://secure.travis-ci.org/cakephp/cakephp.png?branch=master)](http://travis-ci.org/cakephp/cakephp)
-
-![Cake Power](https://raw.github.com/cakephp/cakephp/master/lib/Cake/Console/Templates/skel/webroot/img/cake.power.gif)
+Now the configuration to BookFace is completed. To start BookFace, just `$ sudo service apache2 restart` to see.
