@@ -45,25 +45,53 @@ class DATABASE_CONFIG {
 
 #### Configure Apache
 
-The configuration of apache server includes setting the document root and enables URL rewrite, you can start from editing the apache config file in `/etc/apache2/sites-enables/000-default.conf`. Below is the example configure marking lines to be edited.
+The configuration of apache server includes setting the document root and enables URL rewrite, you can start from editing the apache config file in `/etc/apache2/apache2.conf`. Below is the example configure marking lines to be edited.
 
 ``` text
-DocumentRoot /path/to/n7books
+<Directory />
+        Options FollowSymLinks
+        AllowOverride None
+        Require all denied
+</Directory>
+<Directory /usr/share>
+        AllowOverride None
+        Require all granted
+</Directory>
+
+<Directory /home/ewind/n7books/>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+</Directory>
+```
+
+Then, check if `/etc/apache2/mods-enabled` contails `rewrite.load`. If not, just execute this.
+ 
+``` bash
+$ sudo cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled
+```
+
+Then edit `/etc/apache2/sites-enabled/000-default.conf`
+
+```
+DocumentRoot /path/to/n7books/app/webroot
 <Directory />
         Options FollowSymLinks
         AllowOverride All
 </Directory>
-<Directory /path/to/n7books>
+<Directory /path/to/n7books/app/webroot>
         Options Indexes FollowSymLinks MultiViews
         AllowOverride All
         Order allow,deny
         Allow from all
 </Directory>
-```
-Then, check if `/etc/apache2/mods-enabled` contails `rewrite.load`. If not, just execute this.
- 
-``` bash
-$ sudo cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled
+<Directory "/usr/lib/cgi-bin">
+        AllowOverride None
+        Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+        Order allow,deny
+        Allow from all
+</Directory>
+
 ```
 
 Now the configuration to BookFace is completed. To start BookFace, just `$ sudo service apache2 restart` to see.
